@@ -8,7 +8,12 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.virtualstudios.medistore.ui.fragments.LoginFragment"
-        android:label="fragment_login"
+        android:label="Login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up" />
 
 </navigation>
