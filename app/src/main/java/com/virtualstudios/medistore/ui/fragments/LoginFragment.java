@@ -16,7 +16,7 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (rootView != null){
+        if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_login, container, false);
         }
         return rootView;
