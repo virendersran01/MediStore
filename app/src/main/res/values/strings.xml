@@ -2,4 +2,10 @@
     <string name="app_name">MediStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_login_username">Username or Email or Phone</string>
+    <string name="hint_password">Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="text_forgot_password">Forgot Password?</string>
+    <string name="hint_home_search">Search Medicine</string>
 </resources>
