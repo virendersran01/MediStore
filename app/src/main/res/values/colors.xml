@@ -5,6 +5,7 @@
     <color name="colorAccent">#4ebaaa</color>
     <color name="colorBackground">#EBEBEB</color>
     <color name="colorPrimaryLight">#E9F8F1</color>
+    <color name="colorInactiveIcon">#76FFFFFF</color>
 
     <color name="colorTextInput">#e0f7fa</color>
     <color name="colorWhite">#FFFFFF</color>
