@@ -23,7 +23,7 @@ public class LoginFragment extends Fragment {
     private TextInputLayout inputLayoutUsername;
     private TextInputLayout inputLayoutPassword;
 
-    private MaterialButton buttonRegister;
+    private MaterialButton buttonRegister, buttonLogin;
     private TextView textForgotPassword;
     private AlertDialog dialogForgotPassword;
 
@@ -40,6 +40,7 @@ public class LoginFragment extends Fragment {
 
     private void initViews() {
         buttonRegister = rootView.findViewById(R.id.buttonRegister);
+        buttonLogin = rootView.findViewById(R.id.buttonLogin);
         textForgotPassword = rootView.findViewById(R.id.textForgotPassword);
 
 
@@ -54,6 +55,13 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showForgotPasswordDialog();
+            }
+        });
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.homeFragment);
             }
         });
     }
