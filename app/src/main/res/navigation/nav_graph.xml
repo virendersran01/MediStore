@@ -3,18 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.virtualstudios.medistore.ui.fragments.LoginFragment"
-        android:label="Login"
-        tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.virtualstudios.medistore.ui.fragments.SignUpFragment"
-        android:label="Sign Up"
-        tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.virtualstudios.medistore.ui.fragments.HomeFragment"

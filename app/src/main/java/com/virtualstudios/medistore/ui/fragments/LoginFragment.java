@@ -1,5 +1,6 @@
 package com.virtualstudios.medistore.ui.fragments;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.virtualstudios.medistore.R;
+import com.virtualstudios.medistore.ui.activities.MainActivity;
 
 public class LoginFragment extends Fragment {
 
@@ -61,7 +63,7 @@ public class LoginFragment extends Fragment {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.homeFragment);
+               startActivity(new Intent(v.getContext(), MainActivity.class));
             }
         });
     }

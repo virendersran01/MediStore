@@ -6,20 +6,16 @@
         android:id="@+id/menuHome"
         android:icon="@drawable/ic_home"
         android:title="Home"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
+
     <item
-        android:id="@+id/menu2"
-        android:icon="@drawable/ic_favorite"
-        android:title="Favorite"
-        app:showAsAction="always"/>
-    <item
-        android:id="@+id/menu3"
+        android:id="@+id/menuManagement"
         android:icon="@drawable/ic_assignment"
-        android:title="Store"
-        app:showAsAction="always"/>
+        android:title="Management"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menuProfile"
         android:icon="@drawable/ic_account"
         android:title="Profile"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 </menu>
