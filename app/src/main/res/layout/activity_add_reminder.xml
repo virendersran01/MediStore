@@ -31,11 +31,10 @@
             android:id="@+id/textMedicineName"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="56dp"
             android:layout_marginEnd="24dp"
-            android:drawablePadding="8dp"
             android:focusable="false"
             app:boxBackgroundColor="@color/colorTextInput"
             app:boxBackgroundMode="filled"
@@ -50,8 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:textSize="14sp" />
+                android:inputType="text"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,8 +71,7 @@
             android:id="@+id/textMedicineCategory"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:drawablePadding="8dp"
+            android:layout_height="50dp"
             android:focusable="false"
             app:boxBackgroundColor="@color/colorTextInput"
             app:boxBackgroundMode="filled"
@@ -88,8 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:textSize="14sp" />
+                android:inputType="text"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,10 +123,9 @@
             android:id="@+id/textMedicineType"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-
-            android:drawablePadding="8dp"
+            android:layout_height="50dp"
             android:focusable="false"
+            app:boxCollapsedPaddingTop="0dp"
             app:boxBackgroundColor="@color/colorTextInput"
             app:boxBackgroundMode="filled"
             app:boxCornerRadiusTopEnd="6dp"
@@ -142,8 +139,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:textSize="14sp" />
+                android:inputType="text"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
