@@ -9,6 +9,8 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,9 +20,10 @@ import com.virtualstudios.medistore.R;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Context mContext = MainActivity.this;
     private FragmentContainerView fragmentContainerView;
     private FloatingActionButton fabAddReminder;
+
 
 
     @Override
@@ -33,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         fabAddReminder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(fragmentContainerView).navigate(R.id.addReminderFragment);
+//                Navigation.findNavController(fragmentContainerView).navigate(R.id.addReminderFragment);
+                startActivity(new Intent(mContext, AddReminderActivity.class));
             }
         });
 
