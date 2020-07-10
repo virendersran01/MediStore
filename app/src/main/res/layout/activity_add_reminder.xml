@@ -199,14 +199,91 @@
             app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
             app:layout_constraintTop_toBottomOf="@id/textExpiryDate"/>
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/spinner"
+        <FrameLayout
+            android:id="@+id/spinnerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_date"
+            app:layout_constraintStart_toStartOf="@id/textMedicineName"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp" />
+
+        </FrameLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            app:layout_constraintEnd_toStartOf="@id/imageAddDate"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
             app:layout_constraintStart_toStartOf="@id/textMedicineName"
-            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn"/>
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One Day Before"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One Week Before"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One Month Before"/>
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Two Months Before"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Three Monts Before"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/textReminderDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/background_date"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="20 July 2020"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/imageAddDate"
+            app:layout_constraintStart_toEndOf="@id/imageReminderDateIcon"
+            app:layout_constraintTop_toBottomOf="@id/chipGroup"/>
+
+        <ImageView
+            android:id="@+id/imageReminderDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textReminderDate"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toTopOf="@id/textReminderDate"/>
+
 
         <ImageView
             android:id="@+id/imageAddDate"
@@ -214,9 +291,32 @@
             android:layout_height="30dp"
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/ic_add"
-            app:layout_constraintBottom_toBottomOf="@id/spinner"
+            app:layout_constraintBottom_toBottomOf="@id/textReminderDate"
             app:layout_constraintEnd_toEndOf="@id/textMedicineName"
-            app:layout_constraintTop_toTopOf="@id/spinner"/>
+            app:layout_constraintTop_toTopOf="@id/textReminderDate"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Next"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="@id/buttonSubmit"
+            app:layout_constraintEnd_toStartOf="@id/buttonSubmit"
+            app:layout_constraintTop_toTopOf="@id/buttonSubmit"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Submit"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textReminderDate"/>
 
 
 
