@@ -199,6 +199,24 @@
             app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
             app:layout_constraintTop_toBottomOf="@id/textExpiryDate"/>
 
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/imageAddDate"
+            app:layout_constraintStart_toStartOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn"/>
+
+        <ImageView
+            android:id="@+id/imageAddDate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@id/spinner"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintTop_toTopOf="@id/spinner"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
