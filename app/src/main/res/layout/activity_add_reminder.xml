@@ -144,6 +144,63 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/textTitleExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Expiry Date"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textMedicineType"/>
+
+        <TextView
+            android:id="@+id/textExpiryDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/background_date"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="20 July 2020"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintStart_toEndOf="@id/imageDateIcon"
+            app:layout_constraintTop_toBottomOf="@id/textTitleExpiryDate"/>
+
+        <ImageView
+            android:id="@+id/imageDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textExpiryDate"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toTopOf="@id/textExpiryDate"/>
+
+        <TextView
+            android:id="@+id/textTitleAlertOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Alert On"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textExpiryDate"/>
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
