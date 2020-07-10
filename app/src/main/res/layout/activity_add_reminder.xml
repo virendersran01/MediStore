@@ -252,7 +252,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Three Monts Before"/>
+                android:text="Three Months Before"/>
 
         </com.google.android.material.chip.ChipGroup>
 
@@ -287,10 +287,11 @@
 
         <ImageView
             android:id="@+id/imageAddDate"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/colorPrimaryDark"
-            android:src="@drawable/ic_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_edit"
+            android:tint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="@id/textReminderDate"
             app:layout_constraintEnd_toEndOf="@id/textMedicineName"
             app:layout_constraintTop_toTopOf="@id/textReminderDate"/>
