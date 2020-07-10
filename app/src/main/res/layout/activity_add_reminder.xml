@@ -18,8 +18,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:gravity="center"
-            android:text="Add Reminder"
-            android:textColor="@android:color/black"
+            android:text="@string/title_add_reminder"
+            android:textColor="@color/colorPrimary"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="Medicine Name"
+            android:text="@string/medicine_name"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -98,7 +98,7 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="Medicine Category"
+            android:text="@string/medicine_category"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -112,7 +112,7 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="Medicine Type"
+            android:text="@string/medicine_type"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -151,7 +151,7 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="Expiry Date"
+            android:text="@string/expiry_date"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -192,7 +192,7 @@
             android:layout_marginTop="16dp"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="Alert On"
+            android:text="@string/alert_on"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -229,30 +229,30 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="One Day Before"/>
+                android:text="@string/one_day_before"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="One Week Before"/>
+                android:text="@string/one_week_before"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="One Month Before"/>
+                android:text="@string/one_month_before"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Two Months Before"/>
+                android:text="@string/two_months_before"/>
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Three Months Before"/>
+                android:text="@string/three_months_before"/>
 
         </com.google.android.material.chip.ChipGroup>
 
@@ -294,14 +294,15 @@
             android:tint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="@id/textReminderDate"
             app:layout_constraintEnd_toEndOf="@id/textMedicineName"
-            app:layout_constraintTop_toTopOf="@id/textReminderDate"/>
+            android:contentDescription="@string/app_name"
+            app:layout_constraintTop_toTopOf="@id/textReminderDate" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Next"
+            android:text="@string/next"
             android:textColor="@color/colorWhite"
             app:layout_constraintEnd_toEndOf="@id/buttonSubmit"
             app:layout_constraintEnd_toStartOf="@id/buttonSubmit"
@@ -313,7 +314,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Submit"
+            android:text="@string/submit"
             android:textColor="@color/colorWhite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/textMedicineName"

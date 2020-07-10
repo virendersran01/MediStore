@@ -8,4 +8,17 @@
     <string name="text_register">Register</string>
     <string name="text_forgot_password">Forgot Password?</string>
     <string name="hint_home_search">Search Medicine</string>
+    <string name="title_add_reminder">Add Reminder</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="medicine_category">Medicine Category</string>
+    <string name="medicine_type">Medicine Type</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="alert_on">Alert On</string>
+    <string name="one_day_before">One Day Before</string>
+    <string name="one_week_before">One Week Before</string>
+    <string name="one_month_before">One Month Before</string>
+    <string name="two_months_before">Two Months Before</string>
+    <string name="three_months_before">Three Months Before</string>
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
 </resources>
