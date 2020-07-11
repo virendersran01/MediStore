@@ -18,28 +18,26 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:gravity="center"
-            android:text="Add Reminder"
-            android:textColor="@android:color/black"
+            android:text="@string/title_add_reminder"
+            android:textColor="@color/colorPrimary"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textMedicineName"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="56dp"
             android:layout_marginEnd="24dp"
-            android:drawablePadding="8dp"
             android:focusable="false"
             app:boxBackgroundColor="@color/colorTextInput"
             app:boxBackgroundMode="filled"
-            app:boxCollapsedPaddingTop="5dp"
             app:boxCornerRadiusTopEnd="6dp"
             app:boxCornerRadiusTopStart="6dp"
             app:endIconMode="clear_text"
@@ -51,8 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:textSize="14sp" />
+                android:inputType="text"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,13 +60,266 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="Medicine Name"
+            android:text="@string/medicine_name"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/textMedicineName"
             app:layout_constraintStart_toStartOf="@id/textMedicineName" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textMedicineCategory"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            app:boxBackgroundColor="@color/colorTextInput"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintStart_toStartOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleMedicineCategory">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textTitleMedicineCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="@string/medicine_category"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textMedicineName" />
+
+        <TextView
+            android:id="@+id/textTitleMedicineType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="@string/medicine_type"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textMedicineCategory" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textMedicineType"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            app:boxBackgroundColor="@color/colorTextInput"
+            app:boxBackgroundMode="filled"
+            app:boxCollapsedPaddingTop="0dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintStart_toStartOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleMedicineType">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textTitleExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="@string/expiry_date"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textMedicineType" />
+
+        <TextView
+            android:id="@+id/textExpiryDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/background_date"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="20 July 2020"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintStart_toEndOf="@id/imageDateIcon"
+            app:layout_constraintTop_toBottomOf="@id/textTitleExpiryDate" />
+
+        <ImageView
+            android:id="@+id/imageDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textExpiryDate"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toTopOf="@id/textExpiryDate" />
+
+        <TextView
+            android:id="@+id/textTitleAlertOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="@string/alert_on"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textExpiryDate" />
+
+        <FrameLayout
+            android:id="@+id/spinnerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_date"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp" />
+
+        </FrameLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintStart_toStartOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one_day_before" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one_week_before" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one_month_before" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/two_months_before" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/three_months_before" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/textReminderDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/background_date"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="20 July 2020"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/imageAddDate"
+            app:layout_constraintStart_toEndOf="@id/imageReminderDateIcon"
+            app:layout_constraintTop_toBottomOf="@id/chipGroup" />
+
+        <ImageView
+            android:id="@+id/imageReminderDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textReminderDate"
+            app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
+            app:layout_constraintTop_toTopOf="@id/textReminderDate" />
+
+
+        <ImageView
+            android:id="@+id/imageAddDate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/app_name"
+            android:padding="8dp"
+            android:src="@drawable/ic_edit"
+            android:tint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="@id/textReminderDate"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintTop_toTopOf="@id/textReminderDate" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/next"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="@id/buttonSubmit"
+            app:layout_constraintEnd_toStartOf="@id/buttonSubmit"
+            app:layout_constraintTop_toTopOf="@id/buttonSubmit" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/submit"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textReminderDate" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

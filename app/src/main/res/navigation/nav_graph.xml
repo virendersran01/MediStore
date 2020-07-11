@@ -10,10 +10,6 @@
         android:name="com.virtualstudios.medistore.ui.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/addReminderFragment"
-        android:name="com.virtualstudios.medistore.ui.fragments.AddReminderFragment"
-        android:label="Add Reminder"
-        tools:layout="@layout/fragment_add_reminder" />
+
 
 </navigation>
