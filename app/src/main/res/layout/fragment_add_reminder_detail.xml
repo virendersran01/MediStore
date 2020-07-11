@@ -1,14 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.AddReminderDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="Purchase Details"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTitleVendorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Vendor Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/textVendorName"
+            app:layout_constraintStart_toStartOf="@id/textVendorName" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textVendorName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="24dp"
+            android:focusable="false"
+            app:boxBackgroundColor="@color/colorTextInput"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textHeader">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textTitlePurchaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Purchase Date"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textVendorName"
+            app:layout_constraintTop_toBottomOf="@id/textVendorName" />
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/background_date"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="20 July 2020"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/imageDateIcon"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePurchaseDate" />
+
+        <ImageView
+            android:id="@+id/imageDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textDate"
+            app:layout_constraintStart_toStartOf="@id/textTitleVendorName"
+            app:layout_constraintTop_toTopOf="@id/textDate" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/textDate"
+            app:layout_constraintEnd_toEndOf="@id/textVendorName"
+            app:layout_constraintStart_toStartOf="@id/textVendorName"
+            app:layout_constraintTop_toTopOf="@id/textTitlePurchaseDate" />
+
+        <TextView
+            android:id="@+id/textTitlePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Price"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@id/textVendorName" />
+
+        <ImageView
+            android:id="@+id/imageRupeeIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:padding="4dp"
+            android:src="@drawable/rupee_indian"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textDate"
+            app:layout_constraintStart_toStartOf="@id/textTitlePrice"
+            app:layout_constraintTop_toTopOf="@id/textDate" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPrice"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            app:boxBackgroundColor="@color/colorTextInput"
+            app:boxBackgroundMode="filled"
+            app:boxCollapsedPaddingTop="0dp"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/textVendorName"
+            app:layout_constraintStart_toEndOf="@id/imageRupeeIcon"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePrice">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textTitlePersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Person Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textVendorName"
+            app:layout_constraintTop_toBottomOf="@id/textDate" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPersonName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            app:boxBackgroundColor="@color/colorTextInput"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/textVendorName"
+            app:layout_constraintStart_toStartOf="@id/textVendorName"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePersonName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/submit"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textVendorName"
+            app:layout_constraintTop_toBottomOf="@id/textPersonName" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

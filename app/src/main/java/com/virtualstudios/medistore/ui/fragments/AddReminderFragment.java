@@ -3,6 +3,7 @@ package com.virtualstudios.medistore.ui.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.virtualstudios.medistore.R;
@@ -20,6 +22,7 @@ public class AddReminderFragment extends Fragment {
     private View rootView;
     private ImageView imageAddReminderDate;
     private TextView textReminderDate;
+    private MaterialButton buttonNext;
 
 
     @Override
@@ -33,6 +36,7 @@ public class AddReminderFragment extends Fragment {
     private void initViews(){
         imageAddReminderDate = rootView.findViewById(R.id.imageAddDate);
         textReminderDate = rootView.findViewById(R.id.textReminderDate);
+        buttonNext = rootView.findViewById(R.id.buttonNext);
 
         imageAddReminderDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +55,12 @@ public class AddReminderFragment extends Fragment {
             }
         });
 
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(buttonNext).navigate(R.id.addReminderDetailFragment);
+            }
+        });
 
     }
 }

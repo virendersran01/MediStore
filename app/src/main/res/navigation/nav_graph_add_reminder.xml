@@ -10,5 +10,10 @@
         android:name="com.virtualstudios.medistore.ui.fragments.AddReminderFragment"
         android:label="Add Reminder"
         tools:layout="@layout/fragment_add_reminder" />
+    <fragment
+        android:id="@+id/addReminderDetailFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.AddReminderDetailFragment"
+        android:label="fragment_add_reminder_detail"
+        tools:layout="@layout/fragment_add_reminder_detail" />
 
 </navigation>
