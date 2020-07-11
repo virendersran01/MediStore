@@ -22,7 +22,7 @@ public class AddReminderFragment extends Fragment {
     private View rootView;
     private ImageView imageAddReminderDate;
     private TextView textReminderDate;
-    private MaterialButton buttonNext;
+    private MaterialButton buttonNext, buttonSubmit;
 
 
     @Override
@@ -37,6 +37,7 @@ public class AddReminderFragment extends Fragment {
         imageAddReminderDate = rootView.findViewById(R.id.imageAddDate);
         textReminderDate = rootView.findViewById(R.id.textReminderDate);
         buttonNext = rootView.findViewById(R.id.buttonNext);
+        buttonSubmit = rootView.findViewById(R.id.buttonSubmit);
 
         imageAddReminderDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,5 +63,11 @@ public class AddReminderFragment extends Fragment {
             }
         });
 
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(buttonNext).navigate(R.id.reminderDetailFragment);
+            }
+        });
     }
 }
