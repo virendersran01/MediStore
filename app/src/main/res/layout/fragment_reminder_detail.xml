@@ -3,12 +3,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.ReminderDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/textTitleExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Expiry Date"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@android:color/holo_red_dark"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@id/textTitleExpiryDate"
+            app:layout_constraintTop_toBottomOf="@id/textTitleExpiryDate" />
+
+        <TextView
+            android:id="@+id/textExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="20 July 2020"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imageDateIcon"
+            app:layout_constraintStart_toEndOf="@id/imageDateIcon"
+            app:layout_constraintTop_toTopOf="@id/imageDateIcon"/>
+
+        <TextView
+            android:id="@+id/textTitleAlertOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="@string/alert_on"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textAlertDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="30 July 2020"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imageAlertDateIcon"
+            app:layout_constraintEnd_toEndOf="@id/textTitleAlertOn"
+            app:layout_constraintTop_toTopOf="@id/imageAlertDateIcon"/>
+
+        <ImageView
+            android:id="@+id/imageAlertDateIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimary"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@id/textAlertDate"
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertOn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
