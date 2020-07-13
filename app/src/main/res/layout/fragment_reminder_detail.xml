@@ -14,7 +14,6 @@
             android:id="@+id/textTitleExpiryDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/white"
             android:padding="2dp"
@@ -22,7 +21,7 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageDateIcon"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -34,7 +33,8 @@
             android:src="@drawable/ic_date"
             android:tint="@android:color/holo_red_dark"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@id/textTitleExpiryDate"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textTitleExpiryDate" />
 
         <TextView
@@ -57,14 +57,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:background="@android:color/white"
             android:padding="2dp"
             android:text="@string/alert_on"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageAlertDateIcon"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -78,8 +77,9 @@
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="@id/imageAlertDateIcon"
-            app:layout_constraintEnd_toEndOf="@id/textTitleAlertOn"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/imageAlertDateIcon"/>
 
         <ImageView
@@ -109,6 +109,167 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textExpiryDate" />
+
+        <TextView
+            android:id="@+id/textCreatedBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Created By:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/viewUserCard"
+            app:layout_constraintTop_toBottomOf="@id/textMedicineName" />
+
+        <include
+            android:id="@+id/viewUserCard"
+            layout="@layout/layout_user_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textCreatedBy" />
+
+        <TextView
+            android:id="@+id/textTitlePurchaseDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="Purchase Details"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewUserCard" />
+
+        <TextView
+            android:id="@+id/textTitleVendorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Vendor Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePurchaseDetails"/>
+
+        <TextView
+            android:id="@+id/textVendorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textTitleVendorName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleVendorName"/>
+
+
+        <TextView
+            android:id="@+id/textTitlePurchaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Purchase Date"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imagePurchaseDateIcon"
+            app:layout_constraintTop_toBottomOf="@id/textVendorName" />
+
+        <TextView
+            android:id="@+id/textPurchaseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="20 July 2020"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/imagePurchaseDateIcon"
+            app:layout_constraintStart_toEndOf="@id/imagePurchaseDateIcon"
+            app:layout_constraintTop_toTopOf="@id/imagePurchaseDateIcon"/>
+
+        <ImageView
+            android:id="@+id/imagePurchaseDateIcon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_date"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@id/textTitleVendorName"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePurchaseDate" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/textPurchaseDate"
+            app:layout_constraintEnd_toEndOf="@id/textVendorName"
+            app:layout_constraintStart_toStartOf="@id/textVendorName"
+            app:layout_constraintTop_toTopOf="@id/textTitlePurchaseDate" />
+
+        <TextView
+            android:id="@+id/textTitlePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Price"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageRupeeIcon"
+            app:layout_constraintTop_toBottomOf="@id/textVendorName" />
+
+        <ImageView
+            android:id="@+id/imageRupeeIcon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/app_name"
+            android:padding="4dp"
+            android:src="@drawable/rupee_indian"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePrice" />
+
+        <TextView
+            android:id="@+id/textPurchasePrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:text="2020"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/imageRupeeIcon"
+            app:layout_constraintStart_toEndOf="@id/imageRupeeIcon"
+            app:layout_constraintTop_toTopOf="@id/imageRupeeIcon"/>
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
