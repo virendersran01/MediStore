@@ -4,6 +4,7 @@ public class User {
     private int color;
     private String name;
     private String avatarUrl;
+    private String designation;
 
     public int getColor() {
         return color;

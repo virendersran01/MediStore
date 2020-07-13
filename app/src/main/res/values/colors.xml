@@ -156,4 +156,5 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6ffffff</color>
     <color name="white">#ffffff</color>
+    <color name="border_color">@color/colorPrimary</color>
 </resources>

@@ -20,11 +20,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.virtualstudios.medistore.R;
 import com.virtualstudios.medistore.data.models.User;
 import com.virtualstudios.medistore.utils.Utils;
 
 public class AvatarView extends AppCompatImageView {
+
+    private Context context;
 
     /*
      * Constants to define shape
@@ -77,21 +80,23 @@ public class AvatarView extends AppCompatImageView {
      * We cache them in this field
      * */
     private int imageSize;
+    private float borderWidth;
 
     public AvatarView(Context context) {
         super(context);
+        this.context = context;
     }
 
     public AvatarView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
+        this.context = context;
         getAttributes(attrs);
         init();
     }
 
     public AvatarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
+        this.context = context;
         getAttributes(attrs);
         init();
     }
@@ -153,6 +158,8 @@ public class AvatarView extends AppCompatImageView {
         borderPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER));
         borderPaint.setColor(ContextCompat.getColor(context, R.color.border_color));
         borderPaint.setStrokeWidth(context.getResources().getDimension(R.dimen.border_width));
+
+        borderWidth = context.getResources().getDimension(R.dimen.border_width);
     }
 
     /*

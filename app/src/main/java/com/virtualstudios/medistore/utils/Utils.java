@@ -16,5 +16,7 @@ public class Utils {
     }
 
     public static float dpToPixel(int i, Resources resources) {
+        final float scale = resources.getDisplayMetrics().density;
+        return (int) (i * scale + 0.5f);
     }
 }
