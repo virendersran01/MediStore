@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.ReminderDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,12 +28,12 @@
             android:id="@+id/imageDateIcon"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_date"
             android:tint="@android:color/holo_red_dark"
             android:visibility="visible"
-            android:layout_marginStart="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textTitleExpiryDate" />
 
@@ -50,7 +50,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/imageDateIcon"
             app:layout_constraintStart_toEndOf="@id/imageDateIcon"
-            app:layout_constraintTop_toTopOf="@id/imageDateIcon"/>
+            app:layout_constraintTop_toTopOf="@id/imageDateIcon" />
 
         <TextView
             android:id="@+id/textTitleAlertOn"
@@ -71,16 +71,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/white"
             android:padding="2dp"
             android:text="30 July 2020"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="@id/imageAlertDateIcon"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imageAlertDateIcon"/>
+            app:layout_constraintTop_toTopOf="@id/imageAlertDateIcon" />
 
         <ImageView
             android:id="@+id/imageAlertDateIcon"
@@ -164,7 +164,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textTitlePurchaseDetails"/>
+            app:layout_constraintTop_toBottomOf="@id/textTitlePurchaseDetails" />
 
         <TextView
             android:id="@+id/textVendorName"
@@ -172,11 +172,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
+            android:text="Vendor Name"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/textTitleVendorName"
-            app:layout_constraintTop_toBottomOf="@id/textTitleVendorName"/>
+            app:layout_constraintTop_toBottomOf="@id/textTitleVendorName" />
 
 
         <TextView
@@ -204,7 +205,7 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/imagePurchaseDateIcon"
             app:layout_constraintStart_toEndOf="@id/imagePurchaseDateIcon"
-            app:layout_constraintTop_toTopOf="@id/imagePurchaseDateIcon"/>
+            app:layout_constraintTop_toTopOf="@id/imagePurchaseDateIcon" />
 
         <ImageView
             android:id="@+id/imagePurchaseDateIcon"
@@ -266,7 +267,7 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/imageRupeeIcon"
             app:layout_constraintStart_toEndOf="@id/imageRupeeIcon"
-            app:layout_constraintTop_toTopOf="@id/imageRupeeIcon"/>
+            app:layout_constraintTop_toTopOf="@id/imageRupeeIcon" />
 
         <TextView
             android:id="@+id/textTitlePersonName"
@@ -288,11 +289,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
+            android:text="Person Name"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/textTitlePersonName"
-            app:layout_constraintTop_toBottomOf="@id/textTitlePersonName"/>
+            app:layout_constraintTop_toBottomOf="@id/textTitlePersonName" />
 
 
         <TextView
@@ -310,15 +312,15 @@
             app:layout_constraintTop_toBottomOf="@id/textPersonName" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listAlertFor"
+            android:id="@+id/recyclerViewUsers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/textVendorName"
             app:layout_constraintStart_toStartOf="@id/textTitlePersonName"
-            app:layout_constraintTop_toBottomOf="@id/textTitleAlertFor"/>
+            app:layout_constraintTop_toBottomOf="@id/textTitleAlertFor" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
