@@ -41,6 +41,8 @@ public class LoginFragment extends Fragment {
     }
 
     private void initViews() {
+        inputLayoutUsername = rootView.findViewById(R.id.text_layout_username);
+        inputLayoutPassword = rootView.findViewById(R.id.text_layout_password);
         buttonRegister = rootView.findViewById(R.id.buttonRegister);
         buttonLogin = rootView.findViewById(R.id.buttonLogin);
         textForgotPassword = rootView.findViewById(R.id.textForgotPassword);

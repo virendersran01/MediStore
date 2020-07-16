@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">MediStore</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_login_username">Username or Email or Phone</string>
     <string name="hint_password">Password</string>
     <string name="text_login">Login</string>
@@ -22,4 +20,20 @@
     <string name="next">Next</string>
     <string name="submit">Submit</string>
     <string name="rectangle">rectangle</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="error_phone">Invalid phone number</string>
+    <string name="error_username_min_length">Minimum length is 4</string>
+    <string name="error_username_max_length">Maximum length 25</string>
+    <string name="error_username_empty">Required Field</string>
+    <string name="error_email_invalid">Invalid email</string>
+    <string name="error_password_min_length">Password is too short</string>//Min. Length is 6
+    characters.
+    <string name="error_confirm_password">Confirm password not match</string>
+
 </resources>
