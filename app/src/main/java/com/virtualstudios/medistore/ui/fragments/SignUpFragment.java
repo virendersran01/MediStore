@@ -137,7 +137,7 @@ public class SignUpFragment extends Fragment {
 
     private boolean isValidPassword() {
         if (getPassword().length() < 6) {
-            Objects.requireNonNull(inputPassword.getEditText()).setError(getString(R.string.error_password_min_length));
+            Objects.requireNonNull(inputPassword).setError(getString(R.string.error_password_min_length));
             return false;
         }
         return true;
