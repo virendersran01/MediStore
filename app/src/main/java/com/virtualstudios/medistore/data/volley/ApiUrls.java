@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class ApiUrls {
 
-    private static final String serverPrimaryDomain = "https://www.theprogamerz.games/";
-    private static final String apiVersion = "admin/v1/";
+    private static final String serverPrimaryDomain = "https://rs.chemist.techneyo.com/";
+    private static final String apiVersion = "web/v1/";
     public static final String urlLogin = serverPrimaryDomain + apiVersion + "auth/login";
     public static final String urlSignUp = serverPrimaryDomain + apiVersion + "auth/signup";
     public static final String urlForgotPassword = serverPrimaryDomain + apiVersion + "auth/change-password";

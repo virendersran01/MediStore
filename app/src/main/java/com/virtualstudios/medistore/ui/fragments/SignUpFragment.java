@@ -3,6 +3,7 @@ package com.virtualstudios.medistore.ui.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,7 +13,11 @@ import android.view.ViewGroup;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.virtualstudios.medistore.R;
+import com.virtualstudios.medistore.data.remote.UserApi;
+import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
+import com.virtualstudios.medistore.utils.Utils;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class SignUpFragment extends Fragment {
@@ -20,6 +25,7 @@ public class SignUpFragment extends Fragment {
     private View rootView;
     private TextInputLayout inputFullName, inputEmail, inputPhone, inputUsername, inputPassword, inputConfirmPassword;
     private MaterialButton buttonRegister;
+    private AlertDialog alertDialogProgress;
 
 
     @Override
@@ -40,13 +46,13 @@ public class SignUpFragment extends Fragment {
         inputPassword = rootView.findViewById(R.id.inputLayoutPassword);
         inputConfirmPassword = rootView.findViewById(R.id.inputLayoutConfirmPassword);
         buttonRegister = rootView.findViewById(R.id.buttonRegister);
+        alertDialogProgress = Utils.createProgressDialog(rootView.getContext());
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validation()){
-
-                }else {
+                    requestSignUp();
                 }
             }
         });
@@ -137,7 +143,7 @@ public class SignUpFragment extends Fragment {
 
     private boolean isValidPassword() {
         if (getPassword().length() < 6) {
-            Objects.requireNonNull(inputPassword).setError(getString(R.string.error_password_min_length));
+            Objects.requireNonNull(inputPassword.getEditText()).setError(getString(R.string.error_password_min_length));
             return false;
         }
         return true;
@@ -153,5 +159,24 @@ public class SignUpFragment extends Fragment {
 
     private boolean validation(){
         return isValidFullName() & isValidEmail() & isValidPhone() & isValidUserName()& isValidPassword() & isValidConfirmPassword();
+    }
+
+
+    private void requestSignUp(){
+        alertDialogProgress.show();
+        UserApi userApi = new UserApi(rootView.getContext());
+        userApi.requestSignUp(getFullName(), getEmail(), getPhoneNumber(), getUsername(), getConfirmPassword(),
+                new VolleyCallBacks() {
+                    @Override
+                    public void onSuccess() {
+                        alertDialogProgress.dismiss();
+
+                    }
+
+                    @Override
+                    public void onError(TYPE type, Map<String, String> errorList) {
+                        alertDialogProgress.dismiss();
+                    }
+                });
     }
 }

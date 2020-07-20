@@ -12,27 +12,26 @@ public class VolleyHelper {
     private RequestQueue mRequestQueue;
     private  Context mContext;
 
-    private VolleyHelper() {
-
+    private VolleyHelper(Context context) {
+        mContext = context;
+        mRequestQueue = getRequestQueue();
     }
 
-    public static synchronized VolleyHelper getInstance() {
+    public static synchronized VolleyHelper getInstance(Context context) {
         if (mInstance == null) {
-            mInstance = new VolleyHelper();
+            mInstance = new VolleyHelper(context);
         }
         return mInstance;
     }
 
-    private RequestQueue getRequestQueue(Context context) {
-        mContext = context;
+    private RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-            mRequestQueue = Volley.newRequestQueue(context);
+            mRequestQueue = Volley.newRequestQueue(mContext.getApplicationContext());
         }
         return mRequestQueue;
     }
-
     public <T> void addToRequestQueue(Request<T> req) {
-        getRequestQueue(mContext).add(req);
+        getRequestQueue().add(req);
     }
 
 }
