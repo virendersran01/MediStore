@@ -17,7 +17,13 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.virtualstudios.medistore.R;
+import com.virtualstudios.medistore.data.remote.UserApi;
+import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
 import com.virtualstudios.medistore.ui.activities.MainActivity;
+import com.virtualstudios.medistore.utils.Utils;
+
+import java.util.Map;
+import java.util.Objects;
 
 public class LoginFragment extends Fragment {
 
@@ -27,7 +33,7 @@ public class LoginFragment extends Fragment {
 
     private MaterialButton buttonRegister, buttonLogin;
     private TextView textForgotPassword;
-    private AlertDialog dialogForgotPassword;
+    private AlertDialog dialogForgotPassword, alertDialogProgress;
 
 
     @Override
@@ -46,6 +52,7 @@ public class LoginFragment extends Fragment {
         buttonRegister = rootView.findViewById(R.id.buttonRegister);
         buttonLogin = rootView.findViewById(R.id.buttonLogin);
         textForgotPassword = rootView.findViewById(R.id.textForgotPassword);
+        alertDialogProgress = Utils.createProgressDialog(rootView.getContext());
 
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +72,7 @@ public class LoginFragment extends Fragment {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity(new Intent(v.getContext(), MainActivity.class));
+               signIn();
             }
         });
     }
@@ -99,6 +106,88 @@ public class LoginFragment extends Fragment {
         }
 
         dialogForgotPassword.show();
+    }
+
+    private String getUserName() {
+        return Objects.requireNonNull(inputLayoutUsername.getEditText()).getEditableText().toString();
+    }
+
+    private String getUserPassword() {
+        return Objects.requireNonNull(inputLayoutPassword.getEditText()).getEditableText().toString();
+    }
+
+    private  boolean isValidUsernameEmail(){
+        if (isEmail()){
+
+            return isEmailValid(getUserName());
+        }else {
+            return isValidUserName();
+        }
+    }
+
+
+    private boolean isValidUserName() {
+        if (getUserName().length() < 4) {
+            inputLayoutUsername.setError(getString(R.string.error_username_min_length));
+            return false;
+        }
+        if (getUserName().length() > 25) {
+            inputLayoutUsername.setError(getString(R.string.error_username_max_length));
+            return false;
+        }
+        if (getUserName().isEmpty()) {
+            inputLayoutUsername.setError(getString(R.string.error_username_empty));
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isEmail(){
+        return getUserName().contains("@");
+    }
+
+
+
+
+    private boolean isEmailValid(CharSequence email) {
+        if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            inputLayoutUsername.setError(getString(R.string.error_email_invalid));
+            return false;
+        }
+        return true;
+    }
+
+
+    private boolean isValidPassword() {
+        if (getUserPassword().length() < 6) {
+            inputLayoutPassword.setError(getString(R.string.error_password_min_length));
+            return false;
+        }
+        return true;
+    }
+
+    private void signIn(){
+        if (isValidUsernameEmail() && isValidPassword()){
+            requestLogin();
+        }
+    }
+
+    private void requestLogin(){
+        alertDialogProgress.show();
+        UserApi userApi = new UserApi(rootView.getContext());
+        userApi.loginWithUsernamePassword(getUserName(), getUserPassword(),
+                new VolleyCallBacks() {
+                    @Override
+                    public void onSuccess() {
+                        alertDialogProgress.hide();
+                        startActivity(new Intent(rootView.getContext(), MainActivity.class));
+                    }
+
+                    @Override
+                    public void onError(TYPE type, Map<String, String> errorList) {
+                        alertDialogProgress.hide();
+                    }
+                });
     }
 
 }

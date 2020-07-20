@@ -176,6 +176,23 @@ public class SignUpFragment extends Fragment {
                     @Override
                     public void onError(TYPE type, Map<String, String> errorList) {
                         alertDialogProgress.dismiss();
+                        if (type == TYPE.INVALID_VALUE_ERROR) {
+                            if (errorList.containsKey("email")) {
+                                inputEmail.setError(errorList.get("email"));
+                            }
+                            if (errorList.containsKey("username")) {
+                                inputUsername.setError(errorList.get("username"));
+                            }
+                            if (errorList.containsKey("phone")) {
+                                inputPhone.setError(errorList.get("phone"));
+                            }
+                            if (errorList.containsKey("full_name")) {
+                                inputFullName.setError(errorList.get("full_name"));
+                            }
+                            if (errorList.containsKey("password")) {
+                                inputPassword.setError(errorList.get("password"));
+                            }
+                        }
                     }
                 });
     }
