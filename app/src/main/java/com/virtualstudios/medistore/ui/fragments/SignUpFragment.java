@@ -1,5 +1,6 @@
 package com.virtualstudios.medistore.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,12 +10,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.virtualstudios.medistore.R;
 import com.virtualstudios.medistore.data.remote.UserApi;
 import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
+import com.virtualstudios.medistore.ui.activities.MainActivity;
 import com.virtualstudios.medistore.utils.Utils;
 
 import java.util.Map;
@@ -24,7 +27,6 @@ public class SignUpFragment extends Fragment {
 
     private View rootView;
     private TextInputLayout inputFullName, inputEmail, inputPhone, inputUsername, inputPassword, inputConfirmPassword;
-    private MaterialButton buttonRegister;
     private AlertDialog alertDialogProgress;
 
 
@@ -45,15 +47,12 @@ public class SignUpFragment extends Fragment {
         inputUsername = rootView.findViewById(R.id.inputLayoutUsername);
         inputPassword = rootView.findViewById(R.id.inputLayoutPassword);
         inputConfirmPassword = rootView.findViewById(R.id.inputLayoutConfirmPassword);
-        buttonRegister = rootView.findViewById(R.id.buttonRegister);
+        MaterialButton buttonRegister = rootView.findViewById(R.id.buttonRegister);
         alertDialogProgress = Utils.createProgressDialog(rootView.getContext());
 
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (validation()){
-                    requestSignUp();
-                }
+        buttonRegister.setOnClickListener(v -> {
+            if (validation()){
+                requestSignUp();
             }
         });
 
@@ -170,7 +169,8 @@ public class SignUpFragment extends Fragment {
                     @Override
                     public void onSuccess() {
                         alertDialogProgress.dismiss();
-
+                        startActivity(new Intent(rootView.getContext(), MainActivity.class));
+                        requireActivity().finish();
                     }
 
                     @Override
@@ -192,6 +192,8 @@ public class SignUpFragment extends Fragment {
                             if (errorList.containsKey("password")) {
                                 inputPassword.setError(errorList.get("password"));
                             }
+                        }else if (type == TYPE.NETWORK_ERROR){
+                            Toast.makeText(rootView.getContext(), "Please check your internet connection", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

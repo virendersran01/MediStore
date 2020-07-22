@@ -35,5 +35,8 @@
     <string name="error_password_min_length">Password is too short</string>//Min. Length is 6
     characters.
     <string name="error_confirm_password">Confirm password not match</string>
+    <string name="home">Home</string>
+    <string name="reminders">Reminders</string>
+    <string name="profile">Profile</string>
 
 </resources>

@@ -181,6 +181,7 @@ public class LoginFragment extends Fragment {
                     public void onSuccess() {
                         alertDialogProgress.hide();
                         startActivity(new Intent(rootView.getContext(), MainActivity.class));
+                        requireActivity().finish();
                     }
 
                     @Override

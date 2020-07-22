@@ -5,17 +5,17 @@
     <item
         android:id="@+id/menuHome"
         android:icon="@drawable/ic_home"
-        android:title="Home"
-        app:showAsAction="always" />
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menuManagement"
-        android:icon="@drawable/ic_assignment"
-        android:title="Management"
+        android:icon="@drawable/ic_alarm"
+        android:title="@string/reminders"
         app:showAsAction="always" />
     <item
         android:id="@+id/menuProfile"
         android:icon="@drawable/ic_account"
-        android:title="Profile"
+        android:title="@string/profile"
         app:showAsAction="always" />
 </menu>
