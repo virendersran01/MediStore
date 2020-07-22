@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menuManagement"
+        android:id="@+id/menuReminder"
         android:icon="@drawable/ic_alarm"
         android:title="@string/reminders"
         app:showAsAction="always" />

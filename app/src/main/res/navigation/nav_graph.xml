@@ -10,6 +10,16 @@
         android:name="com.virtualstudios.medistore.ui.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.UserProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/remindersFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.RemindersFragment"
+        android:label="Reminders"
+        tools:layout="@layout/fragment_reminders" />
 
 
 </navigation>
