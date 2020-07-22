@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext = MainActivity.this;
     private FragmentContainerView fragmentContainerView;
     private FloatingActionButton fabAddReminder;
-    private BottomAppBar bottomAppBar;
     private NavController navController;
 
 
@@ -45,10 +44,7 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if (Objects.requireNonNull(destination.getLabel()).equals("Home")){
-                }else {
-                    fabAddReminder.setVisibility(View.VISIBLE);
-                }
+
             }
         });
 
@@ -57,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViews(){
         fragmentContainerView = findViewById(R.id.fragmentContainer);
         fabAddReminder = findViewById(R.id.fabAddReminder);
-        bottomAppBar = findViewById(R.id.bottom_app_bar);
+        BottomAppBar bottomAppBar = findViewById(R.id.bottom_app_bar);
 
         fabAddReminder.setOnClickListener(new View.OnClickListener() {
             @Override

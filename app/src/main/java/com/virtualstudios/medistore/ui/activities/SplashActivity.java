@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.virtualstudios.medistore.R;
+import com.virtualstudios.medistore.utils.Constants;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -18,7 +19,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+               if (Constants.getSPreferences(SplashActivity.this).getLoginStatus()){
+                   startActivity(new Intent(SplashActivity.this, MainActivity.class));
+               }else {
+                   startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+               }
                 finish();
             }
         }, 1000);
