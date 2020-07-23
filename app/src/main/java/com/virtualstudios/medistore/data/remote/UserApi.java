@@ -51,6 +51,7 @@ public class UserApi {
                 Constants.getSPreferences(mContext).putSourceDevice(UUID.randomUUID().toString());
             }
             postParams.put("source", Constants.getSPreferences(mContext).getSourceDevice());
+            Log.d(TAG, "loginWithUsernamePassword: "+postParams.toString());
 
         } catch (JSONException e) {
             e.printStackTrace();
