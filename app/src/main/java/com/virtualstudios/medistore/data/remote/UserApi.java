@@ -100,7 +100,7 @@ public class UserApi {
     }
 
     public void requestSignUp(String fullName, String email, String phone,
-                              String username, String password,
+                              String username, String password, String businessName, String address,
                               VolleyCallBacks callBacks) {
 
         JSONObject postParams = new JSONObject();
@@ -111,6 +111,8 @@ public class UserApi {
             postParams.put("email", email);
             postParams.put("phone", phone);
             postParams.put("password", password);
+            postParams.put("business_name", businessName);
+            postParams.put("address", address);
 
 
             if (Constants.getSPreferences(mContext).getSourceDevice() == null) {

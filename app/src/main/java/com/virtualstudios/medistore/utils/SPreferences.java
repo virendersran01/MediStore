@@ -14,6 +14,8 @@ public class SPreferences {
     private final String PREF_KEY_USER_PROFILE_PIC_URL = "profilePicture";
     private final String PREF_KEY_IS_GOOGLE_LOGIN = "isGoogleLogin";
     private final String PREF_KEY_LOGIN_STATUS = "loginStatus";
+    private final String PREF_KEY_USER_BUSINESS_NAME = "businessName";
+    private final String PREF_KEY_USER_ADDRESS = "address";
 
     private SharedPreferences mSharedPreferences;
 
@@ -103,5 +105,25 @@ public class SPreferences {
 
     public void setLoginStatus(boolean loginStatus) {
         mSharedPreferences.edit().putBoolean(PREF_KEY_LOGIN_STATUS, loginStatus).apply();
+    }
+
+    public void setBusinessName(String businessName){
+        mSharedPreferences.edit().putString(PREF_KEY_USER_BUSINESS_NAME, businessName).apply();
+    }
+
+    public String getBusinessName(){
+        return mSharedPreferences.getString(PREF_KEY_USER_BUSINESS_NAME, null);
+    }
+
+    public void setAddress(String address){
+        mSharedPreferences.edit().putString(PREF_KEY_USER_ADDRESS, address).apply();
+    }
+
+    public String getAddress(){
+        return mSharedPreferences.getString(PREF_KEY_USER_ADDRESS, null);
+    }
+
+    public void clearUserData(){
+        mSharedPreferences.edit().clear().apply();
     }
 }

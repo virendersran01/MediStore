@@ -19,6 +19,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
+        <ImageView
+            android:id="@+id/imageLogout"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_rounded"
+            android:backgroundTint="@color/colorWhite"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_logout"
+            android:tint="@android:color/holo_red_dark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
        <com.virtualstudios.medistore.ui.customviews.AvatarView
            android:id="@+id/avatarView"
            android:layout_width="100dp"

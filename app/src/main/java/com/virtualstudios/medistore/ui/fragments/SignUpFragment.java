@@ -7,9 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -26,7 +29,7 @@ import java.util.Objects;
 public class SignUpFragment extends Fragment {
 
     private View rootView;
-    private TextInputLayout inputFullName, inputEmail, inputPhone, inputUsername, inputPassword, inputConfirmPassword;
+    private TextInputLayout inputFullName, inputEmail, inputPhone, inputUsername, inputPassword, inputConfirmPassword, inputBusinessName, inputAddress;
     private AlertDialog alertDialogProgress;
 
 
@@ -47,12 +50,24 @@ public class SignUpFragment extends Fragment {
         inputUsername = rootView.findViewById(R.id.inputLayoutUsername);
         inputPassword = rootView.findViewById(R.id.inputLayoutPassword);
         inputConfirmPassword = rootView.findViewById(R.id.inputLayoutConfirmPassword);
+        inputBusinessName = rootView.findViewById(R.id.inputLayoutBusinessName);
+        inputAddress = rootView.findViewById(R.id.inputLayoutAddress);
         MaterialButton buttonRegister = rootView.findViewById(R.id.buttonRegister);
         alertDialogProgress = Utils.createProgressDialog(rootView.getContext());
 
         buttonRegister.setOnClickListener(v -> {
             if (validation()){
                 requestSignUp();
+            }
+        });
+
+        Objects.requireNonNull(inputAddress.getEditText()).setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE){
+                    buttonRegister.performClick();
+                }
+                return false;
             }
         });
 
@@ -81,6 +96,14 @@ public class SignUpFragment extends Fragment {
 
     private String getConfirmPassword(){
         return Objects.requireNonNull(inputConfirmPassword.getEditText()).getEditableText().toString();
+    }
+
+    private String getBusinessName(){
+        return Objects.requireNonNull(inputBusinessName.getEditText()).getEditableText().toString();
+    }
+
+    private String getAddress(){
+        return Objects.requireNonNull(inputAddress.getEditText()).getEditableText().toString();
     }
 
     private boolean isValidFullName() {
@@ -156,15 +179,31 @@ public class SignUpFragment extends Fragment {
         return true;
     }
 
+    private boolean isValidBusinessName() {
+        if (!getBusinessName().isEmpty()) {
+            Objects.requireNonNull(inputBusinessName.getEditText()).setError(getString(R.string.error_username_empty));
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isValidAddress() {
+        if (!getAddress().isEmpty()) {
+            Objects.requireNonNull(inputAddress.getEditText()).setError(getString(R.string.error_username_empty));
+            return false;
+        }
+        return true;
+    }
+
     private boolean validation(){
-        return isValidFullName() & isValidEmail() & isValidPhone() & isValidUserName()& isValidPassword() & isValidConfirmPassword();
+        return isValidFullName() & isValidEmail() & isValidPhone() & isValidUserName()& isValidPassword() & isValidConfirmPassword() & isValidBusinessName() & isValidAddress();
     }
 
 
     private void requestSignUp(){
         alertDialogProgress.show();
         UserApi userApi = new UserApi(rootView.getContext());
-        userApi.requestSignUp(getFullName(), getEmail(), getPhoneNumber(), getUsername(), getConfirmPassword(),
+        userApi.requestSignUp(getFullName(), getEmail(), getPhoneNumber(), getUsername(), getConfirmPassword(), getBusinessName(), getAddress(),
                 new VolleyCallBacks() {
                     @Override
                     public void onSuccess() {

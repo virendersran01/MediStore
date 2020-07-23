@@ -9,9 +9,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -61,6 +63,17 @@ public class LoginFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.signUpFragment);
             }
         });
+
+        Objects.requireNonNull(inputLayoutPassword.getEditText()).setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE){
+                    buttonLogin.performClick();
+                }
+                return false;
+            }
+        });
+
 
         textForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
