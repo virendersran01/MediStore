@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_add_reminder"
-    app:startDestination="@id/addReminderFragment">
+    app:startDestination="@id/addMedicineFragment">
 
     <fragment
         android:id="@+id/addReminderFragment"
@@ -13,12 +13,22 @@
     <fragment
         android:id="@+id/addReminderDetailFragment"
         android:name="com.virtualstudios.medistore.ui.fragments.AddReminderDetailFragment"
-        android:label="fragment_add_reminder_detail"
+        android:label="Add Reminder Detail"
         tools:layout="@layout/fragment_add_reminder_detail" />
     <fragment
         android:id="@+id/reminderDetailFragment"
         android:name="com.virtualstudios.medistore.ui.fragments.ReminderDetailFragment"
-        android:label="fragment_reminder_detail"
+        android:label="Reminder Detail"
         tools:layout="@layout/fragment_reminder_detail" />
+    <fragment
+        android:id="@+id/addMedicineFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.AddMedicineFragment"
+        android:label="Add Medicine"
+        tools:layout="@layout/fragment_add_medicine" />
+    <fragment
+        android:id="@+id/addEmployeeFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.AddEmployeeFragment"
+        android:label="Add Employee"
+        tools:layout="@layout/fragment_add_employee" />
 
 </navigation>

@@ -43,5 +43,7 @@
     <string name="business_name">Business Name</string>
     <string name="address">Address</string>
     <string name="add_product">Add Product</string>
+    <string name="protency">Protency</string>
+    <string name="add_employee">Add Employee</string>
 
 </resources>

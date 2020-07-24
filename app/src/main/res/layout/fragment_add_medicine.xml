@@ -119,7 +119,7 @@
             app:layout_constraintTop_toBottomOf="@id/textMedicineCategory" />
 
         <FrameLayout
-            android:id="@+id/frameLayout"
+            android:id="@+id/frameLayoutMedicineType"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:background="@drawable/background_date"
@@ -142,12 +142,12 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/white"
             android:padding="2dp"
-            android:text="@string/medicine_type"
+            android:text="@string/protency"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/textTitleMedicineName"
-            app:layout_constraintTop_toBottomOf="@id/frameLayout" />
+            app:layout_constraintTop_toBottomOf="@id/frameLayoutMedicineType" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textProtencyValue"
@@ -160,9 +160,10 @@
             app:boxCornerRadiusTopEnd="6dp"
             app:boxCornerRadiusTopStart="6dp"
             app:endIconMode="clear_text"
-            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="@id/textMedicineName"
-            app:layout_constraintTop_toBottomOf="@id/textProtencyValue">
+            app:layout_constraintTop_toBottomOf="@id/textTitleProtency"
+            app:layout_constraintEnd_toStartOf="@id/frameLayoutProtency">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -172,6 +173,22 @@
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayoutProtency"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_date"
+            app:layout_constraintEnd_toEndOf="@id/textMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleProtency">
+
+            <Spinner
+                android:id="@+id/spinnerProtency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" />
+
+        </FrameLayout>
 
 
 

@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.virtualstudios.medistore.R;
+import com.virtualstudios.medistore.utils.Constants;
 
 import java.util.Objects;
 
@@ -57,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
         fabAddReminder.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {  // 0 for add medicine, 1 for add reminder, 2 for add employee
                 if (Objects.requireNonNull(Objects.requireNonNull(navController.getCurrentDestination()).getLabel()).equals("Home")){
-                    Toast.makeText(mContext, "Add new medicine", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(mContext, AddReminderActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 0));
                 }else if (Objects.equals(navController.getCurrentDestination().getLabel(), "Reminders")){
-                    startActivity(new Intent(mContext, AddReminderActivity.class));
+                    startActivity(new Intent(mContext, AddReminderActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 1));
                 }else if (navController.getCurrentDestination().getLabel().equals("Profile")){
-                    Toast.makeText(mContext, "Add new employee", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(mContext, AddReminderActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 2));
                 }
 
             }
