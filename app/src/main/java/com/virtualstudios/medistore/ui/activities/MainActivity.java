@@ -15,7 +15,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {  // 0 for add medicine, 1 for add reminder, 2 for add employee
                 if (Objects.requireNonNull(Objects.requireNonNull(navController.getCurrentDestination()).getLabel()).equals("Home")){
-                    startActivity(new Intent(mContext, AddReminderActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 0));
+                    startActivity(new Intent(mContext, AddActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 0));
                 }else if (Objects.equals(navController.getCurrentDestination().getLabel(), "Reminders")){
-                    startActivity(new Intent(mContext, AddReminderActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 1));
+                    startActivity(new Intent(mContext, AddActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 1));
                 }else if (navController.getCurrentDestination().getLabel().equals("Profile")){
-                    startActivity(new Intent(mContext, AddReminderActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 2));
+                    startActivity(new Intent(mContext, AddActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 2));
                 }
 
             }

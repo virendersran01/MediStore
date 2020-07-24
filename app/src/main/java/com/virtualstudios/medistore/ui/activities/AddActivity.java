@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.virtualstudios.medistore.R;
@@ -14,7 +13,7 @@ import com.virtualstudios.medistore.utils.Constants;
 
 import java.util.Objects;
 
-public class AddReminderActivity extends AppCompatActivity {
+public class AddActivity extends AppCompatActivity {
 
     private FragmentContainerView fragmentContainerView;
     private NavController navController;
@@ -22,7 +21,7 @@ public class AddReminderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_reminder);
+        setContentView(R.layout.activity_add);
         fragmentContainerView = findViewById(R.id.fragmentContainer);
 
         NavHostFragment navHostFragment =
