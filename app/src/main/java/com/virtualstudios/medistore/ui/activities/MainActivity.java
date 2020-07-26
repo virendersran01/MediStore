@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         fabAddReminder.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  // 0 for add medicine, 1 for add reminder, 2 for add employee
+            public void onClick(View v) {  // 0 for add medicine, 1 for add reminder, 2 for add staff
                 if (Objects.requireNonNull(Objects.requireNonNull(navController.getCurrentDestination()).getLabel()).equals("Home")){
                     startActivity(new Intent(mContext, AddActivity.class).putExtra(Constants.INTENT_KEY_ADD_TYPE, 0));
                 }else if (Objects.equals(navController.getCurrentDestination().getLabel(), "Reminders")){

@@ -32,7 +32,7 @@ public class AddActivity extends AppCompatActivity {
         NavGraph navGraph = navController.getGraph();
 
 
-        if (getIntent().hasExtra(Constants.INTENT_KEY_ADD_TYPE)){  // 0 for add medicine, 1 for add reminder, 2 for add employee
+        if (getIntent().hasExtra(Constants.INTENT_KEY_ADD_TYPE)){  // 0 for add medicine, 1 for add reminder, 2 for add staff
             if (getIntent().getIntExtra(Constants.INTENT_KEY_ADD_TYPE, 0) == 0){
                 navGraph.setStartDestination(R.id.addMedicineFragment);
                 navController.setGraph(navGraph);
@@ -40,7 +40,7 @@ public class AddActivity extends AppCompatActivity {
                 navGraph.setStartDestination(R.id.addReminderFragment);
                 navController.setGraph(navGraph);
             }else if (getIntent().getIntExtra(Constants.INTENT_KEY_ADD_TYPE, 0) == 2){
-                navGraph.setStartDestination(R.id.addEmployeeFragment);
+                navGraph.setStartDestination(R.id.addStaffFragment);
                 navController.setGraph(navGraph);
             }
 

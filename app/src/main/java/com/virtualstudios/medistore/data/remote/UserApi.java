@@ -336,5 +336,39 @@ public class UserApi {
 
         VolleyHelper.getInstance(mContext).addToRequestQueue(jsonObjectRequest);
     }
+
+    public void addStaffRequest(String fullName, String email,
+                                String phone, String designation,
+                                VolleyCallBacks volleyCallBacks){
+
+        JSONObject postParams = new JSONObject();
+        try {
+            postParams.put("full_name", fullName);
+            postParams.put("email", email);
+            postParams.put("phone", phone);
+            postParams.put("designation", designation);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, ApiUrls.urlUserAddStaff, postParams,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        volleyCallBacks.onSuccess();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                return ApiUrls.getHeaders(mContext);
+            }
+        };
+        VolleyHelper.getInstance(mContext).addToRequestQueue(request);
+    }
 }
 

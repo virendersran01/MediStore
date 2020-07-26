@@ -26,9 +26,9 @@
         android:label="Add Medicine"
         tools:layout="@layout/fragment_add_medicine" />
     <fragment
-        android:id="@+id/addEmployeeFragment"
-        android:name="com.virtualstudios.medistore.ui.fragments.AddEmployeeFragment"
-        android:label="Add Employee"
-        tools:layout="@layout/fragment_add_employee" />
+        android:id="@+id/addStaffFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.AddStaffFragment"
+        android:label="Add Staff"
+        tools:layout="@layout/fragment_add_staff" />
 
 </navigation>
