@@ -37,7 +37,7 @@ public class AddStaffFragment extends Fragment {
     }
 
     private void initView(){
-
+        rootView.findViewById(R.id.imageBack).setOnClickListener(view -> requireActivity().onBackPressed());
         inputFullName = rootView.findViewById(R.id.inputLayoutFullName);
         inputEmail = rootView.findViewById(R.id.inputLayoutEmail);
         inputPhone = rootView.findViewById(R.id.inputLayoutPhone);

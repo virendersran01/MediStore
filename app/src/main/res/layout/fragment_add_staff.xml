@@ -1,30 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.AddStaffFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="start"
-        android:text="Staff Detail"
-        android:textColor="@color/colorPrimary"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/viewToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/app_name"
+            android:padding="4dp"
+            android:src="@drawable/ic_arrow_back_ios"
+            app:layout_constraintBottom_toBottomOf="@id/viewToolbar"
+            app:layout_constraintStart_toStartOf="@id/viewToolbar"
+            app:layout_constraintTop_toTopOf="@id/viewToolbar" />
+
+
+        <TextView
+            android:id="@+id/textHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Staff Detail"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/viewToolbar"
+            app:layout_constraintStart_toStartOf="@id/viewToolbar"
+            app:layout_constraintTop_toTopOf="@id/viewToolbar"
+            app:layout_constraintBottom_toBottomOf="@id/viewToolbar"/>
 
         <TextView
             android:id="@+id/textSubHeader"
@@ -34,9 +54,12 @@
             android:text="Please enter staff detail to add in your account with designation"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/textHeader"
-            app:layout_constraintStart_toStartOf="@id/textHeader"
-            app:layout_constraintTop_toBottomOf="@id/textHeader" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewToolbar" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayoutFullName"
@@ -61,7 +84,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textSubHeader"
             app:startIconDrawable="@drawable/ic_user"
-            app:startIconTint="@color/colorPlayerIcon">
+            app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
