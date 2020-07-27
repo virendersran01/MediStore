@@ -2,6 +2,8 @@ package com.virtualstudios.medistore.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.virtualstudios.medistore.data.models.User;
+
 public class SPreferences {
 
     private final String PREF_KEY_SOURCE = "source";
@@ -125,5 +127,14 @@ public class SPreferences {
 
     public void clearUserData(){
         mSharedPreferences.edit().clear().apply();
+    }
+
+    public User getLoggedInUser(){
+        if (getLoginStatus()){
+            User user = new User();
+            user.setName(getUserName());
+            return user;
+        }
+        return null;
     }
 }
