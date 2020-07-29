@@ -1,8 +1,11 @@
 package com.virtualstudios.medistore.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 
 import com.virtualstudios.medistore.data.models.User;
+
+import java.util.Random;
 
 public class SPreferences {
 
@@ -133,6 +136,8 @@ public class SPreferences {
         if (getLoginStatus()){
             User user = new User();
             user.setName(getUserName());
+            Random rnd = new Random();
+            user.setColor(Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)));
             return user;
         }
         return null;

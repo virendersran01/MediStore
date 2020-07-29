@@ -18,9 +18,10 @@ import com.virtualstudios.medistore.R;
 public class AddMedicineFragment extends Fragment {
 
     private View rootView;
-    private Spinner spinnerCategory, spinnerIsAthical;
+    private Spinner spinnerCategory, spinnerIsAthical, spinnerType;
     private String[] categoryOptions= {"Allopathic", "Homeopathic", "Ayurvedic"};
     private String[] isAthicalOptions= {"Yes", "No"};
+    private String[] typeOptions= {"Tablet", "Capsule", "Syrup"};
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -36,7 +37,9 @@ public class AddMedicineFragment extends Fragment {
         rootView.findViewById(R.id.imageBack).setOnClickListener(view -> requireActivity().onBackPressed());
         spinnerCategory = rootView.findViewById(R.id.spinnerCategory);
         spinnerIsAthical = rootView.findViewById(R.id.spinnerIsAthical);
+        spinnerType = rootView.findViewById(R.id.spinnerType);
         spinnerCategory.setAdapter(new ArrayAdapter<>(rootView.getContext(), android.R.layout.simple_list_item_1, categoryOptions));
         spinnerIsAthical.setAdapter(new ArrayAdapter<>(rootView.getContext(), android.R.layout.simple_list_item_1, isAthicalOptions));
+        spinnerType.setAdapter(new ArrayAdapter<>(rootView.getContext(), android.R.layout.simple_list_item_1, typeOptions));
     }
 }

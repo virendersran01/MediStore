@@ -12,7 +12,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 
@@ -150,7 +149,8 @@ public class AvatarView extends AppCompatImageView {
 
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
-        textPaint.setTextSize(16f * getResources().getDisplayMetrics().scaledDensity);
+        textPaint.setFakeBoldText(true);
+        textPaint.setTextSize(24f * getResources().getDisplayMetrics().scaledDensity);
         textPaint.setColor(Color.WHITE);
 
         borderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -210,8 +210,8 @@ public class AvatarView extends AppCompatImageView {
             @Override
             public void draw(@NonNull Canvas canvas) {
 
-                int centerX = Math.round(canvas.getWidth() * 0.5f);
-                int centerY = Math.round(canvas.getHeight() * 0.5f);
+                int centerX = Math.round(getBounds().width() * 0.5f);
+                int centerY = Math.round(getBounds().height() * 0.5f);
 
                 /*
                  * To draw text
@@ -228,7 +228,7 @@ public class AvatarView extends AppCompatImageView {
                     } else {
                         canvas.drawCircle(centerX,
                                 centerY,
-                                Math.max(canvas.getHeight() / 2, textWidth / 2),
+                                Math.max(getBounds().height() / 2, textWidth / 2),
                                 paint);
                     }
 
