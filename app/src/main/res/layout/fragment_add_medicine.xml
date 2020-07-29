@@ -150,6 +150,75 @@
 
         </FrameLayout>
 
+        <TextView
+            android:id="@+id/textTitleType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="@string/medicine_type"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textTitleName"
+            app:layout_constraintTop_toBottomOf="@id/frameLayoutCategory" />
+
+        <FrameLayout
+            android:id="@+id/frameLayoutType"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_date"
+            app:layout_constraintEnd_toStartOf="@id/inputQty"
+            app:layout_constraintStart_toStartOf="@id/inputName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleType">
+
+            <Spinner
+                android:id="@+id/spinnerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textTitleQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:padding="2dp"
+            android:text="Qty Per Piece"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/inputQty"
+            app:layout_constraintTop_toBottomOf="@id/frameLayoutCategory" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputQty"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            app:boxBackgroundColor="@color/colorTextInput"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="6dp"
+            app:boxCornerRadiusTopStart="6dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="@id/inputName"
+            app:layout_constraintTop_toBottomOf="@id/textTitleType">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
