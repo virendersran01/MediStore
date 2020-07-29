@@ -27,8 +27,10 @@ import java.util.UUID;
 import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.INVALID_AUTHENTICATION;
 import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.INVALID_VALUE_ERROR;
 import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.JSON_ERROR;
+import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.MISSING_INFORMATION;
 import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.NETWORK_ERROR;
 import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.NO_RESULT_FOUND;
+import static com.virtualstudios.medistore.data.volley.VolleyCallBacks.TYPE.SERVER_ERROR;
 
 public class UserApi {
     private static final String TAG = "UserApi";
@@ -339,7 +341,7 @@ public class UserApi {
 
     public void addStaffRequest(String fullName, String email,
                                 String phone, String designation,
-                                VolleyCallBacks volleyCallBacks){
+                                VolleyCallBacks callBacks){
 
         JSONObject postParams = new JSONObject();
         try {
@@ -355,11 +357,25 @@ public class UserApi {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        volleyCallBacks.onSuccess();
+                        callBacks.onSuccess();
                     }
                 }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse(VolleyError error) { //200,401,422,500
+                Map<String, String> errorList = new HashMap<>();
+                if (error.networkResponse.statusCode == 422){
+                    errorList.put("message", ApiErrors.error422);
+                    callBacks.onError(MISSING_INFORMATION, errorList);
+                }else if (error.networkResponse.statusCode == 401){
+                    errorList.put("message", ApiErrors.error401);
+                    callBacks.onError(INVALID_AUTHENTICATION, errorList);
+                }else if (error.networkResponse.statusCode == 500){
+                    errorList.put("message", ApiErrors.error500);
+                    callBacks.onError(SERVER_ERROR, errorList);
+                }else if (error instanceof NetworkError){
+                    errorList.put("message", ApiErrors.errorNetwork);
+                    callBacks.onError(NETWORK_ERROR, errorList);
+                }
 
             }
         }){

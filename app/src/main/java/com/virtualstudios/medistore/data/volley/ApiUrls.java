@@ -16,7 +16,7 @@ public class ApiUrls {
     public static final String urlUserDetails = serverPrimaryDomain + apiVersion + "user/detail";
     public static final String urlUserUploadImage = serverPrimaryDomain + apiVersion + "user/upload-image";
     public static final String urlUserProfileImage = serverPrimaryDomain + apiVersion + "user/get-image";
-    public static final String urlUserAddStaff = serverPrimaryDomain + apiVersion + "user/get-image";
+    public static final String urlUserAddStaff = serverPrimaryDomain + apiVersion + "auth/add-user";
     private static final String authPrefix = "Bearer ";
 
     public static Map<String, String> getHeaders(Context context) {

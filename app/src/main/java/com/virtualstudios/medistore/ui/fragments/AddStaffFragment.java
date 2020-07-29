@@ -135,6 +135,7 @@ public class AddStaffFragment extends Fragment {
                     @Override
                     public void onSuccess() {
                         alertDialogProgress.dismiss();
+                        requireActivity().finish();
                     }
 
                     @Override
