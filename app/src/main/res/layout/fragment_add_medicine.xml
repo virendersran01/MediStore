@@ -219,6 +219,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <ImageView
+            android:id="@+id/imageAddSalt"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_rounded"
+            android:backgroundTint="@color/colorAccent"
+            android:padding="4dp"
+            android:src="@drawable/ic_add"
+            android:tint="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="@id/layoutAddSalt"
+            app:layout_constraintTop_toBottomOf="@id/layoutAddSalt"/>
+
         <LinearLayout
             android:id="@+id/layoutAddSalt"
             android:layout_width="0dp"
@@ -236,6 +249,15 @@
 
         </LinearLayout>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="@id/inputName"
+            app:layout_constraintStart_toStartOf="@id/inputName"
+            app:layout_constraintTop_toBottomOf="@id/imageAddSalt"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
