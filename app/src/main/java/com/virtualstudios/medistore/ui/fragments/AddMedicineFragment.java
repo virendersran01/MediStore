@@ -70,7 +70,6 @@ public class AddMedicineFragment extends Fragment {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("TAG", "salt : "+addSaltView.getSaltName() + " potency : "+addSaltView.getProtencyValue() + " "+addSaltView.getPotencyTypeValue());
             }
         });
     }

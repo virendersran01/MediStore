@@ -1,6 +1,7 @@
 package com.virtualstudios.medistore.ui.customviews;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,7 @@ public class AddSaltView extends ConstraintLayout {
 
     private void init(){
         LayoutInflater.from(getContext()).inflate(R.layout.layout_add_salt, this,true);
+        setBackgroundColor(Color.parseColor("#f3f3f5"));
         inputName = findViewById(R.id.inputSaltName);
         inputPotency = findViewById(R.id.inputPotency);
         spinnerPotencyType = findViewById(R.id.spinnerPotencyType);
