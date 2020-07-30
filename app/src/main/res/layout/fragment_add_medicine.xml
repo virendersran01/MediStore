@@ -219,6 +219,23 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <LinearLayout
+            android:id="@+id/layoutAddSalt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/inputName"
+            app:layout_constraintStart_toStartOf="@id/inputName"
+            app:layout_constraintTop_toBottomOf="@id/frameLayoutType">
+
+            <com.virtualstudios.medistore.ui.customviews.AddSaltView
+                android:id="@+id/viewAddSalt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
