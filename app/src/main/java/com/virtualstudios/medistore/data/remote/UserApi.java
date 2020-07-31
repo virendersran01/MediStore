@@ -9,18 +9,22 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.virtualstudios.medistore.data.models.User;
 import com.virtualstudios.medistore.data.volley.ApiErrors;
 import com.virtualstudios.medistore.data.volley.ApiUrls;
 import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
 import com.virtualstudios.medistore.data.volley.VolleyHelper;
 import com.virtualstudios.medistore.utils.Constants;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -42,6 +46,7 @@ public class UserApi {
     }
 
     public String urlUserProfileImage = null;
+    public List<User> staffList = new ArrayList<>();
 
     public void loginWithUsernamePassword(String userName, String password, VolleyCallBacks callBacks) {
 
@@ -385,6 +390,47 @@ public class UserApi {
             }
         };
         VolleyHelper.getInstance(mContext).addToRequestQueue(request);
+    }
+
+    public void getStaffUsers(VolleyCallBacks callBacks){
+        JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.POST, ApiUrls.urlStaffUsers, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject jsonObject = response.getJSONObject("response");
+                            Log.d(TAG, "onResponse: "+jsonObject.toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) { //200,404
+                Map<String, String> errorList = new HashMap<>();
+                if (error.networkResponse.statusCode == 404){
+                    errorList.put("message", ApiErrors.error404);
+                    callBacks.onError(NO_RESULT_FOUND, errorList);
+                }else if (error instanceof NetworkError){
+                    errorList.put("message", ApiErrors.errorNetwork);
+                    callBacks.onError(NETWORK_ERROR, errorList);
+                }
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                return ApiUrls.getHeaders(mContext);
+            }
+        };
+
+        VolleyHelper.getInstance(mContext).addToRequestQueue(objectRequest);
+
+    }
+
+    public void deleteStaffUser(String user, VolleyCallBacks callBacks){
+
+
+
     }
 }
 

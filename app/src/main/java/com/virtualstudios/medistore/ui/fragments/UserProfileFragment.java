@@ -12,9 +12,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.virtualstudios.medistore.R;
+import com.virtualstudios.medistore.data.models.User;
+import com.virtualstudios.medistore.data.remote.UserApi;
+import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
 import com.virtualstudios.medistore.ui.activities.LoginActivity;
 import com.virtualstudios.medistore.ui.customviews.AvatarView;
 import com.virtualstudios.medistore.utils.Constants;
+
+import java.util.Map;
 
 public class UserProfileFragment extends Fragment {
     private View rootView;
@@ -45,5 +50,22 @@ public class UserProfileFragment extends Fragment {
 
         avatarView.setUser(Constants.getSPreferences(rootView.getContext()).getLoggedInUser());
         textUsername.setText(Constants.getSPreferences(rootView.getContext()).getLoggedInUser().getName());
+
+        getStaffList();
+    }
+
+    private void getStaffList(){
+        UserApi userApi = new UserApi(rootView.getContext());
+        userApi.getStaffUsers(new VolleyCallBacks() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError(TYPE type, Map<String, String> errorList) {
+
+            }
+        });
     }
 }
