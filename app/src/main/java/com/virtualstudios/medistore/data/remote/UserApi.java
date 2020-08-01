@@ -398,8 +398,7 @@ public class UserApi {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject jsonObject = response.getJSONObject("response");
-                            Log.d(TAG, "onResponse: "+jsonObject.toString());
+                            JSONArray jsonArray = response.getJSONArray("response");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
