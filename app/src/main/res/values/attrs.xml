@@ -3,4 +3,11 @@
     <declare-styleable name="AvatarView">
         <attr name="avatar_shape" format="string"/>
     </declare-styleable>
+    
+    <declare-styleable name="UserAvatarView">
+        <attr name="shape">
+            <enum name="circle" value="0"/>
+            <enum name="rectangle" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>

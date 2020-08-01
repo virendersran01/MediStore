@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ public class UserProfileFragment extends Fragment {
     private View rootView;
     private AvatarView avatarView;
     private TextView textUsername;
+    private RecyclerView recyclerViewStaff;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -50,6 +52,8 @@ public class UserProfileFragment extends Fragment {
 
         avatarView.setUser(Constants.getSPreferences(rootView.getContext()).getLoggedInUser());
         textUsername.setText(Constants.getSPreferences(rootView.getContext()).getLoggedInUser().getName());
+
+        recyclerViewStaff = rootView.findViewById(R.id.recyclerViewStaff);
 
         getStaffList();
     }
