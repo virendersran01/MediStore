@@ -399,6 +399,18 @@ public class UserApi {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray jsonArray = response.getJSONArray("response");
+                            Log.d(TAG, "onResponse: "+jsonArray.toString());
+                            for (int i = 0; i <jsonArray.length() ; i++) {
+                                User user = new User();
+                                user.setEncId(jsonArray.getJSONObject(i).getString("enc_id"));
+                                user.setName(jsonArray.getJSONObject(i).getString("employee_name"));
+                                user.setUsername(jsonArray.getJSONObject(i).getString("username"));
+                                user.setEmail(jsonArray.getJSONObject(i).getString("email"));
+                                user.setPhoneNumber(jsonArray.getJSONObject(i).getString("phone"));
+                                user.setDesignation(jsonArray.getJSONObject(i).getString("designation"));
+                                staffList.add(user);
+                            }
+                            callBacks.onSuccess();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

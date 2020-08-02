@@ -131,6 +131,7 @@ public class UserAvatarView extends AppCompatImageView {
         clipPath = new Path();
 
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(backgroundColor);
         textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         textPaint.setFakeBoldText(true);
         textPaint.setTextSize(24f * getResources().getDisplayMetrics().scaledDensity);
@@ -150,6 +151,7 @@ public class UserAvatarView extends AppCompatImageView {
         text = Utils.getShortName(name);
         backColor = backgroundColor;
         this.imageUrl = imageUrl;
+        setValues();
         invalidate();
     }
 
@@ -233,7 +235,6 @@ public class UserAvatarView extends AppCompatImageView {
         };
     }
 
-
     /*
      * Set the canvas bounds here
      * */
@@ -247,11 +248,12 @@ public class UserAvatarView extends AppCompatImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+
         if (shape == RECTANGLE) {
-            canvas.drawRoundRect(rectF, cornerRadius, cornerRadius, borderPaint);
+            canvas.drawRoundRect(rectF, cornerRadius, cornerRadius, paint);
             clipPath.addRoundRect(rectF, cornerRadius, cornerRadius, Path.Direction.CW);
         } else {
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.height() / 2) - borderWidth, borderPaint);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.height() / 2) - borderWidth, paint);
 
             clipPath.addCircle(rectF.centerX(), rectF.centerY(), (rectF.height() / 2), Path.Direction.CW);
         }

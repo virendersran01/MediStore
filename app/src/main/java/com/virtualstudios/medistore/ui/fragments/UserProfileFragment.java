@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.virtualstudios.medistore.data.models.User;
 import com.virtualstudios.medistore.data.remote.UserApi;
 import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
 import com.virtualstudios.medistore.ui.activities.LoginActivity;
+import com.virtualstudios.medistore.ui.adapters.StaffAdapter;
 import com.virtualstudios.medistore.ui.customviews.AvatarView;
 import com.virtualstudios.medistore.ui.customviews.UserAvatarView;
 import com.virtualstudios.medistore.utils.Constants;
@@ -28,7 +30,6 @@ public class UserProfileFragment extends Fragment {
     private AvatarView avatarView;
     private TextView textUsername;
     private RecyclerView recyclerViewStaff;
-    private UserAvatarView userAvatarView;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -55,12 +56,8 @@ public class UserProfileFragment extends Fragment {
         avatarView.setUser(Constants.getSPreferences(rootView.getContext()).getLoggedInUser());
         textUsername.setText(Constants.getSPreferences(rootView.getContext()).getLoggedInUser().getName());
 
-        userAvatarView = rootView.findViewById(R.id.userAvaterView);
-
-        //userAvatarView.setName(Constants.getSPreferences(rootView.getContext()).getLoggedInUser().getName());
-        //userAvatarView.setBackColor("#FFB320");
-
         recyclerViewStaff = rootView.findViewById(R.id.recyclerViewStaff);
+        recyclerViewStaff.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
         getStaffList();
     }
@@ -70,7 +67,7 @@ public class UserProfileFragment extends Fragment {
         userApi.getStaffUsers(new VolleyCallBacks() {
             @Override
             public void onSuccess() {
-
+                recyclerViewStaff.setAdapter(new StaffAdapter(userApi.staffList));
             }
 
             @Override
