@@ -228,7 +228,7 @@ public class AvatarView extends AppCompatImageView {
                     } else {
                         canvas.drawCircle(centerX,
                                 centerY,
-                                Math.max(getBounds().height() / 2, textWidth / 2),
+                                Math.max((getBounds().height() * 0.5f), textWidth / 2),
                                 paint);
                     }
 
