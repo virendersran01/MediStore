@@ -58,7 +58,6 @@ public class UserApi {
                 Constants.getSPreferences(mContext).putSourceDevice(UUID.randomUUID().toString());
             }
             postParams.put("source", Constants.getSPreferences(mContext).getSourceDevice());
-            Log.d(TAG, "loginWithUsernamePassword: "+postParams.toString());
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -72,7 +71,11 @@ public class UserApi {
                     JSONObject object = response.getJSONObject("response");
                     Constants.getSPreferences(mContext).putUserId(object.getString("user_id"));
                     Constants.getSPreferences(mContext).putUserName(object.getString("username"));
+                    Constants.getSPreferences(mContext).setUserFullName(object.getString("full_name"));
                     Constants.getSPreferences(mContext).putUserEmail(object.getString("email"));
+                    Constants.getSPreferences(mContext).setPhoneNumber(object.getString("phone"));
+                    Constants.getSPreferences(mContext).setBusinessName(object.getString("business_name"));
+                    Constants.getSPreferences(mContext).setAddress(object.getString("address"));
                     Constants.getSPreferences(mContext).putAuthKey(object.getString("access_token"));
                     Constants.getSPreferences(mContext).putRefreshToken(object.getString("refresh_token"));
                     Constants.getSPreferences(mContext).setLoginStatus(true);

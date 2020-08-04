@@ -32,11 +32,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-       <com.virtualstudios.medistore.ui.customviews.AvatarView
+       <com.virtualstudios.medistore.ui.customviews.UserAvatarView
            android:id="@+id/avatarView"
            android:layout_width="100dp"
            android:layout_height="100dp"
-           app:avatar_shape="circle"
+           app:shape="circle"
            android:layout_marginBottom="8dp"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:text="Username"
             android:textColor="@color/colorWhite"
             android:textSize="19sp"
             android:textStyle="bold"
@@ -72,9 +71,9 @@
             app:layout_constraintBottom_toBottomOf="@id/headerView">
 
             <TextView
+                android:id="@+id/textBusinessName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chemist Store Name"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="19sp"
                 android:textStyle="bold"

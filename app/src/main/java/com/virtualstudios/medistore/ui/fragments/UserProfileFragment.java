@@ -27,8 +27,9 @@ import java.util.Map;
 
 public class UserProfileFragment extends Fragment {
     private View rootView;
-    private AvatarView avatarView;
+    private UserAvatarView avatarView;
     private TextView textUsername;
+    private TextView textBusinessName;
     private RecyclerView recyclerViewStaff;
 
     @Override
@@ -52,9 +53,11 @@ public class UserProfileFragment extends Fragment {
         });
         avatarView = rootView.findViewById(R.id.avatarView);
         textUsername = rootView.findViewById(R.id.textUsername);
+        textBusinessName = rootView.findViewById(R.id.textBusinessName);
 
-        avatarView.setUser(Constants.getSPreferences(rootView.getContext()).getLoggedInUser());
-        textUsername.setText(Constants.getSPreferences(rootView.getContext()).getLoggedInUser().getName());
+        avatarView.setUser(Constants.getSPreferences(rootView.getContext()).getUserFullName(), null, null);
+        textUsername.setText(Constants.getSPreferences(rootView.getContext()).getUserFullName());
+        textBusinessName.setText(Constants.getSPreferences(rootView.getContext()).getBusinessName());
 
         recyclerViewStaff = rootView.findViewById(R.id.recyclerViewStaff);
         recyclerViewStaff.setLayoutManager(new LinearLayoutManager(rootView.getContext()));

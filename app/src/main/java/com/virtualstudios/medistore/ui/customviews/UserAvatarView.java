@@ -14,7 +14,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.view.View;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +23,6 @@ import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.virtualstudios.medistore.R;
-import com.virtualstudios.medistore.data.models.User;
 import com.virtualstudios.medistore.utils.Utils;
 
 import java.util.Random;
@@ -148,9 +147,15 @@ public class UserAvatarView extends AppCompatImageView {
     }
 
     public void setUser(String name, String backgroundColor, String imageUrl){
-        text = Utils.getShortName(name);
-        backColor = backgroundColor;
-        this.imageUrl = imageUrl;
+        if (name != null) {
+            text = Utils.getShortName(name);
+        }
+        if (backgroundColor != null){
+            backColor = backgroundColor;
+        }
+        if (imageUrl != null) {
+            this.imageUrl = imageUrl;
+        }
         setValues();
         invalidate();
     }

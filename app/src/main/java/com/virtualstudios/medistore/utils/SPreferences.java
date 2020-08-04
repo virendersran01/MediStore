@@ -16,6 +16,7 @@ public class SPreferences {
     private final String PREF_KEY_USER_NAME = "username";
     private final String PREF_KEY_USER_FULL_NAME = "userFullName";
     private final String PREF_KEY_USER_EMAIL = "email";
+    private final String PREF_KEY_USER_PHONE_NUMBER = "phoneNumber";
     private final String PREF_KEY_USER_PROFILE_PIC_URL = "profilePicture";
     private final String PREF_KEY_IS_GOOGLE_LOGIN = "isGoogleLogin";
     private final String PREF_KEY_LOGIN_STATUS = "loginStatus";
@@ -124,22 +125,21 @@ public class SPreferences {
         mSharedPreferences.edit().putString(PREF_KEY_USER_ADDRESS, address).apply();
     }
 
-    public String getAddress(){
+        public String getAddress(){
         return mSharedPreferences.getString(PREF_KEY_USER_ADDRESS, null);
+    }
+
+    public void setPhoneNumber(String phoneNumber){
+        mSharedPreferences.edit().putString(PREF_KEY_USER_PHONE_NUMBER, phoneNumber).apply();
+    }
+
+    public String getPhoneNumber(){
+        return mSharedPreferences.getString(PREF_KEY_USER_PHONE_NUMBER, null);
     }
 
     public void clearUserData(){
         mSharedPreferences.edit().clear().apply();
     }
 
-    public User getLoggedInUser(){
-        if (getLoginStatus()){
-            User user = new User();
-            user.setName(getUserName());
-            Random rnd = new Random();
-            user.setColor(Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256)));
-            return user;
-        }
-        return null;
-    }
+
 }

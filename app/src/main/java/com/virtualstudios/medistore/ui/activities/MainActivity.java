@@ -74,13 +74,19 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.menuHome:
-                        Navigation.findNavController(fragmentContainerView).navigate(R.id.homeFragment);
+                        if (!Objects.equals(Objects.requireNonNull(navController.getCurrentDestination()).getLabel(), "Home")) {
+                            Navigation.findNavController(fragmentContainerView).navigate(R.id.homeFragment);
+                        }
                         break;
                     case R.id.menuReminder:
-                        Navigation.findNavController(fragmentContainerView).navigate(R.id.remindersFragment);
+                        if (!Objects.equals(Objects.requireNonNull(navController.getCurrentDestination()).getLabel(), "Reminders")) {
+                            Navigation.findNavController(fragmentContainerView).navigate(R.id.remindersFragment);
+                        }
                         break;
                     case R.id.menuProfile:
-                        Navigation.findNavController(fragmentContainerView).navigate(R.id.userProfileFragment);
+                        if (!Objects.equals(Objects.requireNonNull(navController.getCurrentDestination()).getLabel(), "Profile")) {
+                            Navigation.findNavController(fragmentContainerView).navigate(R.id.userProfileFragment);
+                        }
                         break;
                 }
                 return false;
