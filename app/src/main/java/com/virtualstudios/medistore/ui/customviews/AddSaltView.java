@@ -41,7 +41,7 @@ public class AddSaltView extends ConstraintLayout {
 
     private void init(){
         LayoutInflater.from(getContext()).inflate(R.layout.layout_add_salt, this,true);
-        setBackgroundColor(Color.parseColor("#f3f3f5"));
+       // setBackgroundColor(Color.parseColor("#f3f3f5"));
         inputName = findViewById(R.id.inputSaltName);
         inputPotency = findViewById(R.id.inputPotency);
         spinnerPotencyType = findViewById(R.id.spinnerPotencyType);

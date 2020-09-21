@@ -29,7 +29,7 @@ public class AddMedicineFragment extends Fragment {
     private String[] typeOptions= {"Tablet", "Capsule", "Syrup"};
     private LinearLayout layoutAddSalts;
     private AddSaltView addSaltView;
-    private ImageView imageAddSalt;
+    private ImageView imageAddSalt, imageRemoveSalt;
     private MaterialButton buttonAdd;
 
     @Override
@@ -53,7 +53,13 @@ public class AddMedicineFragment extends Fragment {
         layoutAddSalts = rootView.findViewById(R.id.layoutAddSalt);
         addSaltView = layoutAddSalts.findViewById(R.id.viewAddSalt);
         imageAddSalt = rootView.findViewById(R.id.imageAddSalt);
+        imageRemoveSalt = rootView.findViewById(R.id.imageRemoveSalt);
         buttonAdd = rootView.findViewById(R.id.buttonAdd);
+
+        if (layoutAddSalts.getChildCount() < 1){
+            imageRemoveSalt.setVisibility(View.GONE);
+        }
+
 
         imageAddSalt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +70,19 @@ public class AddMedicineFragment extends Fragment {
                 addSaltView1.setLayoutParams(layoutParams);
                 layoutAddSalts.addView(addSaltView1);
 
+                if (layoutAddSalts.getChildCount() > 1){
+                    imageRemoveSalt.setVisibility(View.VISIBLE
+                    );
+                }
             }
         });
+
+        imageRemoveSalt.setOnClickListener(view -> {
+            if (layoutAddSalts.getChildCount() > 1){
+                layoutAddSalts.removeViewAt(layoutAddSalts.getChildCount() - 1);
+            }
+        });
+
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override

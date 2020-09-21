@@ -34,7 +34,7 @@ public class AddActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra(Constants.INTENT_KEY_ADD_TYPE)){  // 0 for add medicine, 1 for add reminder, 2 for add staff
             if (getIntent().getIntExtra(Constants.INTENT_KEY_ADD_TYPE, 0) == 0){
-                navGraph.setStartDestination(R.id.addMedicineFragment);
+                navGraph.setStartDestination(R.id.addProductFragment);
                 navController.setGraph(navGraph);
             }else if (getIntent().getIntExtra(Constants.INTENT_KEY_ADD_TYPE, 0) == 1){
                 navGraph.setStartDestination(R.id.addReminderFragment);

@@ -30,5 +30,10 @@
         android:name="com.virtualstudios.medistore.ui.fragments.AddStaffFragment"
         android:label="Add Staff"
         tools:layout="@layout/fragment_add_staff" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.virtualstudios.medistore.ui.fragments.AddProductFragment"
+        android:label="Add Product"
+        tools:layout="@layout/fragment_add_product" />
 
 </navigation>
