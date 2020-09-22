@@ -19,6 +19,7 @@ public class AddProductFragment extends Fragment {
     private MaterialButton buttonAddMedicated, buttonAddCosmetic;
     private View viewStep1, viewStep2, viewStep3, viewStep4, viewStep5;
     private MaterialButton buttonStep2, buttonStep3, buttonStep4, buttonStep5;
+    private MaterialButton buttonPrevStep1, buttonPrevStep2, buttonPrevStep3, buttonPrevStep4;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,14 +34,19 @@ public class AddProductFragment extends Fragment {
         buttonAddMedicated = rootView.findViewById(R.id.buttonAddMedicine);
         buttonAddCosmetic = rootView.findViewById(R.id.buttonAddCosmetic);
         viewStep1 = rootView.findViewById(R.id.viewStep1);
-        buttonStep2 = viewStep1.findViewById(R.id.buttonStep2);
         viewStep2 = rootView.findViewById(R.id.viewStep2);
-        buttonStep3 = viewStep2.findViewById(R.id.buttonNext);
         viewStep3 = rootView.findViewById(R.id.viewStep3);
-        buttonStep4 = viewStep3.findViewById(R.id.buttonNext);
         viewStep4 = rootView.findViewById(R.id.viewStep4);
-        buttonStep5 = viewStep4.findViewById(R.id.buttonNext);
         viewStep5 = rootView.findViewById(R.id.viewStep5);
+        buttonStep2 = viewStep1.findViewById(R.id.buttonNext);
+        buttonStep3 = viewStep2.findViewById(R.id.buttonNext);
+        buttonStep4 = viewStep3.findViewById(R.id.buttonNext);
+        buttonStep5 = viewStep4.findViewById(R.id.buttonNext);
+        buttonPrevStep1 = viewStep2.findViewById(R.id.buttonPrevious);
+        buttonPrevStep2 = viewStep3.findViewById(R.id.buttonPrevious);
+        buttonPrevStep3 = viewStep4.findViewById(R.id.buttonPrevious);
+        buttonPrevStep4 = viewStep5.findViewById(R.id.buttonPrevious);
+
 
 
         buttonAddMedicated.setOnClickListener(v -> {
@@ -68,6 +74,26 @@ public class AddProductFragment extends Fragment {
         buttonStep5.setOnClickListener(v -> {
             viewStep4.setVisibility(View.GONE);
             viewStep5.setVisibility(View.VISIBLE);
+        });
+
+        buttonPrevStep1.setOnClickListener(v -> {
+            viewStep2.setVisibility(View.GONE);
+            viewStep1.setVisibility(View.VISIBLE);
+        });
+
+        buttonPrevStep2.setOnClickListener(v -> {
+            viewStep3.setVisibility(View.GONE);
+            viewStep2.setVisibility(View.VISIBLE);
+        });
+
+        buttonPrevStep3.setOnClickListener(v -> {
+            viewStep4.setVisibility(View.GONE);
+            viewStep3.setVisibility(View.VISIBLE);
+        });
+
+        buttonPrevStep4.setOnClickListener(v -> {
+            viewStep5.setVisibility(View.GONE);
+            viewStep4.setVisibility(View.VISIBLE);
         });
     }
 
