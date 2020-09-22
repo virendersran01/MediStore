@@ -99,5 +99,30 @@
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/textHeader"/>
 
+    <include
+        android:id="@+id/viewStep3"
+        layout="@layout/view_step_3_add_medicine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+
+    <include
+        android:id="@+id/viewStep4"
+        layout="@layout/view_step_4_add_medicine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+
+    <include
+        android:id="@+id/viewStep5"
+        layout="@layout/view_step_5_add_medicine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

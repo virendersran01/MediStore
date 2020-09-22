@@ -17,8 +17,8 @@ public class AddProductFragment extends Fragment {
     private View rootView;
     private TextView textHeader;
     private MaterialButton buttonAddMedicated, buttonAddCosmetic;
-    private View viewStep1, viewStep2;
-    private MaterialButton buttonStep2;
+    private View viewStep1, viewStep2, viewStep3, viewStep4, viewStep5;
+    private MaterialButton buttonStep2, buttonStep3, buttonStep4, buttonStep5;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +35,13 @@ public class AddProductFragment extends Fragment {
         viewStep1 = rootView.findViewById(R.id.viewStep1);
         buttonStep2 = viewStep1.findViewById(R.id.buttonStep2);
         viewStep2 = rootView.findViewById(R.id.viewStep2);
+        buttonStep3 = viewStep2.findViewById(R.id.buttonNext);
+        viewStep3 = rootView.findViewById(R.id.viewStep3);
+        buttonStep4 = viewStep3.findViewById(R.id.buttonNext);
+        viewStep4 = rootView.findViewById(R.id.viewStep4);
+        buttonStep5 = viewStep4.findViewById(R.id.buttonNext);
+        viewStep5 = rootView.findViewById(R.id.viewStep5);
+
 
         buttonAddMedicated.setOnClickListener(v -> {
             showHideButtonMedicated(false);
@@ -48,6 +55,20 @@ public class AddProductFragment extends Fragment {
             viewStep2.setVisibility(View.VISIBLE);
         });
 
+        buttonStep3.setOnClickListener(v -> {
+            viewStep2.setVisibility(View.GONE);
+            viewStep3.setVisibility(View.VISIBLE);
+        });
+
+        buttonStep4.setOnClickListener(v -> {
+            viewStep3.setVisibility(View.GONE);
+            viewStep4.setVisibility(View.VISIBLE);
+        });
+
+        buttonStep5.setOnClickListener(v -> {
+            viewStep4.setVisibility(View.GONE);
+            viewStep5.setVisibility(View.VISIBLE);
+        });
     }
 
     private void showHideButtonMedicated(boolean status){
