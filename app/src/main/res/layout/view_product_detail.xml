@@ -143,6 +143,19 @@
         app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
         app:layout_constraintTop_toBottomOf="@id/textSaltName" />
 
+    <TextView
+        android:id="@+id/textPotency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:text="100"
+        app:layout_constraintEnd_toStartOf="@id/viewDivider"
+        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
+        app:layout_constraintTop_toBottomOf="@id/textTitlePotency"/>
+
+
     <View
         android:id="@+id/viewDivider"
         android:layout_width="1dp"
@@ -163,6 +176,92 @@
         app:layout_constraintStart_toStartOf="@id/viewDivider"
         app:layout_constraintTop_toTopOf="@id/textTitlePotency" />
 
+    <TextView
+        android:id="@+id/textPotencyType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:text="mg"
+        app:layout_constraintEnd_toEndOf="@id/textSaltName"
+        app:layout_constraintStart_toEndOf="@id/viewDivider"
+        app:layout_constraintTop_toBottomOf="@id/textTitlePotencyType"/>
+
+    <TextView
+        android:id="@+id/textTitleManufactureBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="@string/manufacture_by"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/textName"
+        app:layout_constraintTop_toBottomOf="@id/textPotency"/>
+
+    <TextView
+        android:id="@+id/textManufactureBy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:text="Manufacture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textTitleManufactureBy"
+        app:layout_constraintTop_toBottomOf="@id/textTitleManufactureBy"/>
+
+    <TextView
+        android:id="@+id/textTitleMarketingBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="@string/marketing_by"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/textName"
+        app:layout_constraintTop_toBottomOf="@id/textManufactureBy"/>
+
+    <TextView
+        android:id="@+id/textMarketingBy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:text="Marketing by"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textTitleMarketingBy"
+        app:layout_constraintTop_toBottomOf="@id/textTitleMarketingBy"/>
+
+    <TextView
+        android:id="@+id/textTitleQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="@string/qty_per_piece"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/textName"
+        app:layout_constraintTop_toBottomOf="@id/textMarketingBy"/>
+
+    <TextView
+        android:id="@+id/textQty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:text="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textTitleQty"
+        app:layout_constraintTop_toBottomOf="@id/textTitleQty"/>
 
 
 

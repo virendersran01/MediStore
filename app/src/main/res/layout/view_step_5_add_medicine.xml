@@ -12,7 +12,7 @@
         android:layout_marginTop="48dp"
         android:background="@android:color/white"
         android:padding="2dp"
-        android:text="Qty Per Piece"
+        android:text="@string/qty_per_piece"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"

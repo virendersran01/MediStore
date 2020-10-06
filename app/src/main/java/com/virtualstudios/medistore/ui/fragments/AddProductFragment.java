@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -17,6 +18,7 @@ public class AddProductFragment extends Fragment {
     private View rootView;
     private TextView textHeader;
     private MaterialButton buttonAddMedicated, buttonAddCosmetic;
+    private ScrollView scrollView;
     private View viewStep1, viewStep2, viewStep3, viewStep4, viewStep5;
     private MaterialButton buttonStep2, buttonStep3, buttonStep4, buttonStep5;
     private MaterialButton buttonPrevStep1, buttonPrevStep2, buttonPrevStep3, buttonPrevStep4;
@@ -33,6 +35,7 @@ public class AddProductFragment extends Fragment {
         textHeader = rootView.findViewById(R.id.textHeader);
         buttonAddMedicated = rootView.findViewById(R.id.buttonAddMedicine);
         buttonAddCosmetic = rootView.findViewById(R.id.buttonAddCosmetic);
+        scrollView = rootView.findViewById(R.id.scrollView);
         viewStep1 = rootView.findViewById(R.id.viewStep1);
         viewStep2 = rootView.findViewById(R.id.viewStep2);
         viewStep3 = rootView.findViewById(R.id.viewStep3);
@@ -52,6 +55,7 @@ public class AddProductFragment extends Fragment {
         buttonAddMedicated.setOnClickListener(v -> {
             showHideButtonMedicated(false);
             showHideButtonCosmetic(false);
+            scrollView.setVisibility(View.VISIBLE);
             viewStep1.setVisibility(View.VISIBLE);
             textHeader.setText("Add Medicine");
         });

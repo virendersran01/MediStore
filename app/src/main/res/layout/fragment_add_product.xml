@@ -83,45 +83,81 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <include
-        android:id="@+id/viewStep1"
-        layout="@layout/view_step_1_add_medicine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textHeader">
 
-    <include
-        android:id="@+id/viewStep2"
-        layout="@layout/view_step_2_add_medicine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:animateLayoutChanges="true">
 
-    <include
-        android:id="@+id/viewStep3"
-        layout="@layout/view_step_3_add_medicine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+            <include
+                android:id="@+id/viewStep1"
+                layout="@layout/view_step_1_add_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-    <include
-        android:id="@+id/viewStep4"
-        layout="@layout/view_step_4_add_medicine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+            <include
+                android:id="@+id/viewStep2"
+                layout="@layout/view_step_2_add_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-    <include
-        android:id="@+id/viewStep5"
-        layout="@layout/view_step_5_add_medicine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/textHeader"/>
+            <include
+                android:id="@+id/viewStep3"
+                layout="@layout/view_step_3_add_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <include
+                android:id="@+id/viewStep4"
+                layout="@layout/view_step_4_add_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <include
+                android:id="@+id/viewStep5"
+                layout="@layout/view_step_5_add_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="viewStep1, viewStep2, viewStep3, viewStep4, viewStep5"/>
+
+            <include
+                android:id="@+id/viewProductDetail"
+                layout="@layout/view_product_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/barrier"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 
 
 

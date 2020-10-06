@@ -49,5 +49,8 @@
     <string name="salt_name">Salt Name</string>
     <string name="potency">Potency</string>
     <string name="potency_type">Potency Type</string>
+    <string name="manufacture_by">Manufacture By</string>
+    <string name="marketing_by">Marketing By</string>
+    <string name="qty_per_piece">Qty Per Piece</string>
 
 </resources>
