@@ -52,7 +52,7 @@
         android:layout_marginTop="12dp"
         android:background="@android:color/white"
         android:padding="2dp"
-        android:text="Is Athical"
+        android:text="@string/is_athical"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"

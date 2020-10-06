@@ -45,5 +45,9 @@
     <string name="add_product">Add Product</string>
     <string name="protency">Protency</string>
     <string name="add_employee">Add Employee</string>
+    <string name="is_athical">Is Athical</string>
+    <string name="salt_name">Salt Name</string>
+    <string name="potency">Potency</string>
+    <string name="potency_type">Potency Type</string>
 
 </resources>
