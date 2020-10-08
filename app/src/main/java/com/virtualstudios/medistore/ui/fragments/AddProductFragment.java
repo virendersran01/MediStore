@@ -22,7 +22,7 @@ public class AddProductFragment extends Fragment {
     private ScrollView scrollView;
     private View viewStep1, viewStep2, viewStep3, viewStep4, viewStep5, viewProductDetail;
     private MaterialButton buttonStep2, buttonStep3, buttonStep4, buttonStep5;
-    private MaterialButton buttonPrevStep1, buttonPrevStep2, buttonPrevStep3, buttonPrevStep4;
+    private MaterialButton buttonPrevStep1, buttonPrevStep2, buttonPrevStep3, buttonPrevStep4, buttonDone;
     private TextView viewTextTitleName, viewTextName;
     private TextView viewTextTitleIsAthical, viewTextIsAthical;
     private TextView viewTextTitleMedicineCategory, viewTextMedicineCategory;
@@ -61,6 +61,7 @@ public class AddProductFragment extends Fragment {
         buttonPrevStep2 = viewStep3.findViewById(R.id.buttonPrevious);
         buttonPrevStep3 = viewStep4.findViewById(R.id.buttonPrevious);
         buttonPrevStep4 = viewStep5.findViewById(R.id.buttonPrevious);
+        buttonDone = viewStep5.findViewById(R.id.buttonDone);
 
 
         buttonAddMedicated.setOnClickListener(v -> {
@@ -80,16 +81,19 @@ public class AddProductFragment extends Fragment {
         buttonStep3.setOnClickListener(v -> {
             viewStep2.setVisibility(View.GONE);
             viewStep3.setVisibility(View.VISIBLE);
+            showHideDetailViews2(true);
         });
 
         buttonStep4.setOnClickListener(v -> {
             viewStep3.setVisibility(View.GONE);
             viewStep4.setVisibility(View.VISIBLE);
+            showHideDetailViews3(true);
         });
 
         buttonStep5.setOnClickListener(v -> {
             viewStep4.setVisibility(View.GONE);
             viewStep5.setVisibility(View.VISIBLE);
+            showHideDetailViews4(true);
         });
 
         buttonPrevStep1.setOnClickListener(v -> {
@@ -111,6 +115,11 @@ public class AddProductFragment extends Fragment {
             viewStep5.setVisibility(View.GONE);
             viewStep4.setVisibility(View.VISIBLE);
         });
+
+        buttonDone.setOnClickListener(v -> {
+            viewStep5.setVisibility(View.GONE);
+            showHideDetailViews5(true);
+        });
     }
 
     private void initDetailViews(View viewDetail){
@@ -129,6 +138,10 @@ public class AddProductFragment extends Fragment {
         viewTextMarketingBy = viewDetail.findViewById(R.id.textMarketingBy);
         viewTextTitleQty = viewDetail.findViewById(R.id.textTitleQty);
         viewTextQty = viewDetail.findViewById(R.id.textQty);
+        showHideDetailViews2(false);
+        showHideDetailViews3(false);
+        showHideDetailViews4(false);
+        showHideDetailViews5(false);
     }
 
     private void showHideButtonMedicated(boolean status) {
@@ -144,6 +157,52 @@ public class AddProductFragment extends Fragment {
             buttonAddCosmetic.setVisibility(View.VISIBLE);
         } else {
             buttonAddCosmetic.setVisibility(View.GONE);
+        }
+    }
+
+    private void showHideDetailViews2(boolean status){
+        if (status){
+            viewTextTitleMedicineCategory.setVisibility(View.VISIBLE);
+            viewTextMedicineCategory.setVisibility(View.VISIBLE);
+            viewTextTitleMedicineType.setVisibility(View.VISIBLE);
+            viewTextMedicineType.setVisibility(View.VISIBLE);
+        }else {
+            viewTextTitleMedicineCategory.setVisibility(View.GONE);
+            viewTextMedicineCategory.setVisibility(View.GONE);
+            viewTextTitleMedicineType.setVisibility(View.GONE);
+            viewTextMedicineType.setVisibility(View.GONE);
+        }
+    }
+
+    private void showHideDetailViews3(boolean status){
+        if (status){
+            linearLayoutSalt.setVisibility(View.VISIBLE);
+        }else {
+            linearLayoutSalt.setVisibility(View.GONE);
+        }
+    }
+
+    private void showHideDetailViews4(boolean status){
+        if (status){
+            viewTextTitleManufactureBy.setVisibility(View.VISIBLE);
+            viewTextManufactureBy.setVisibility(View.VISIBLE);
+            viewTextTitleMarketingBy.setVisibility(View.VISIBLE);
+            viewTextMarketingBy.setVisibility(View.VISIBLE);
+        }else {
+            viewTextTitleManufactureBy.setVisibility(View.GONE);
+            viewTextManufactureBy.setVisibility(View.GONE);
+            viewTextTitleMarketingBy.setVisibility(View.GONE);
+            viewTextMarketingBy.setVisibility(View.GONE);
+        }
+    }
+
+    private void showHideDetailViews5(boolean status){
+        if (status){
+            viewTextTitleQty.setVisibility(View.VISIBLE);
+            viewTextQty.setVisibility(View.VISIBLE);
+        }else {
+            viewTextTitleQty.setVisibility(View.GONE);
+            viewTextQty.setVisibility(View.GONE);
         }
     }
 
