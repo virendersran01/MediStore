@@ -1,7 +1,6 @@
-package com.virtualstudios.medistore.ui.customviews;
+package com.virtualstudios.medistore.ui.widgets;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;

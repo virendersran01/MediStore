@@ -14,13 +14,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.virtualstudios.medistore.R;
-import com.virtualstudios.medistore.data.models.User;
 import com.virtualstudios.medistore.data.remote.UserApi;
 import com.virtualstudios.medistore.data.volley.VolleyCallBacks;
 import com.virtualstudios.medistore.ui.activities.LoginActivity;
 import com.virtualstudios.medistore.ui.adapters.StaffAdapter;
-import com.virtualstudios.medistore.ui.customviews.AvatarView;
-import com.virtualstudios.medistore.ui.customviews.UserAvatarView;
+import com.virtualstudios.medistore.ui.widgets.UserAvatarView;
 import com.virtualstudios.medistore.utils.Constants;
 
 import java.util.Map;

@@ -3,7 +3,6 @@ package com.virtualstudios.medistore.ui.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +13,7 @@ import android.view.ViewGroup;
 import com.virtualstudios.medistore.R;
 import com.virtualstudios.medistore.data.models.User;
 import com.virtualstudios.medistore.ui.adapters.UsersAdapter;
-import com.virtualstudios.medistore.ui.customviews.AvatarView;
+import com.virtualstudios.medistore.ui.widgets.AvatarView;
 
 
 public class ReminderDetailFragment extends Fragment {

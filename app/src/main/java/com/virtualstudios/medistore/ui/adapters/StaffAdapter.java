@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.virtualstudios.medistore.R;
 import com.virtualstudios.medistore.data.models.User;
-import com.virtualstudios.medistore.ui.customviews.UserAvatarView;
+import com.virtualstudios.medistore.ui.widgets.UserAvatarView;
 
 import java.util.List;
 

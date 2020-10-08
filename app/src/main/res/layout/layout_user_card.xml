@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:elevation="4dp"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="8dp"
+    tools:viewBindingIgnore="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.virtualstudios.medistore.ui.customviews.AvatarView
+        <com.virtualstudios.medistore.ui.widgets.AvatarView
             android:id="@+id/avatar"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            app:avatar_shape="circle"
             android:layout_margin="16dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:avatar_shape="circle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -34,7 +36,7 @@
             android:textSize="19sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/avatar"
-            app:layout_constraintTop_toTopOf="@id/avatar"/>
+            app:layout_constraintTop_toTopOf="@id/avatar" />
 
         <TextView
             android:id="@+id/textDesignation"

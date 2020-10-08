@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,7 @@ import android.widget.Spinner;
 
 import com.google.android.material.button.MaterialButton;
 import com.virtualstudios.medistore.R;
-import com.virtualstudios.medistore.ui.customviews.AddSaltView;
+import com.virtualstudios.medistore.ui.widgets.AddSaltView;
 
 
 public class AddMedicineFragment extends Fragment {

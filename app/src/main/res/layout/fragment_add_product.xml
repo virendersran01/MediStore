@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.AddProductFragment"
-    android:animateLayoutChanges="true">
+    android:animateLayoutChanges="true"
+    tools:viewBindingIgnore="true">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardBack"
@@ -151,7 +152,7 @@
                 layout="@layout/view_product_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/barrier"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.virtualstudios.medistore.R;
 import com.virtualstudios.medistore.data.models.User;
-import com.virtualstudios.medistore.ui.customviews.AvatarView;
+import com.virtualstudios.medistore.ui.widgets.AvatarView;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> {
 

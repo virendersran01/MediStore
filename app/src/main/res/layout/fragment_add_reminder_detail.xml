@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:viewBindingIgnore="true"
     tools:context=".ui.fragments.AddReminderDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -220,8 +221,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/textVendorName"
             app:layout_constraintTop_toBottomOf="@id/textPersonName" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

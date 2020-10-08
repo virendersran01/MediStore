@@ -1,4 +1,4 @@
-package com.virtualstudios.medistore.ui.customviews;
+package com.virtualstudios.medistore.ui.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;

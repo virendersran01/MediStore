@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:viewBindingIgnore="true"
     tools:context=".ui.fragments.UserProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,9 +16,9 @@
             android:layout_width="0dp"
             android:layout_height="256dp"
             android:background="@color/colorPrimaryDark"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageLogout"
@@ -29,18 +30,18 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_logout"
             android:tint="@android:color/holo_red_dark"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-       <com.virtualstudios.medistore.ui.customviews.UserAvatarView
-           android:id="@+id/avatarView"
-           android:layout_width="100dp"
-           android:layout_height="100dp"
-           app:shape="circle"
-           android:layout_marginBottom="8dp"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintBottom_toTopOf="@id/textUsername" />
+        <com.virtualstudios.medistore.ui.widgets.UserAvatarView
+            android:id="@+id/avatarView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/textUsername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shape="circle" />
 
         <TextView
             android:id="@+id/textUsername"
@@ -49,13 +50,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="40dp"
             android:textColor="@color/colorWhite"
             android:textSize="19sp"
             android:textStyle="bold"
-            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@id/card"
             app:layout_constraintEnd_toEndOf="@id/avatarView"
-            app:layout_constraintStart_toStartOf="@id/avatarView"
-            app:layout_constraintBottom_toTopOf="@id/card"/>
+            app:layout_constraintStart_toStartOf="@id/avatarView" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
@@ -65,21 +66,21 @@
             android:layout_marginEnd="16dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/headerView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/headerView"
-            app:layout_constraintBottom_toBottomOf="@id/headerView">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerView">
 
             <TextView
                 android:id="@+id/textBusinessName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="19sp"
-                android:textStyle="bold"
+                android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:textAlignment="center"
-                android:layout_gravity="center"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -88,11 +89,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

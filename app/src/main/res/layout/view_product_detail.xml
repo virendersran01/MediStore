@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:viewBindingIgnore="true">
 
     <TextView
         android:id="@+id/textTitleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/white"
         android:text="@string/medicine_name"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,23 +25,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="Medicine Name"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleName"
-        app:layout_constraintTop_toBottomOf="@id/textTitleName"/>
+        app:layout_constraintTop_toBottomOf="@id/textTitleName" />
 
     <TextView
         android:id="@+id/textTitleIsAthical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@android:color/white"
         android:text="@string/is_athical"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/textName"
         app:layout_constraintTop_toBottomOf="@id/textName" />
 
@@ -48,23 +50,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="Yes"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleIsAthical"
-        app:layout_constraintTop_toBottomOf="@id/textTitleIsAthical"/>
+        app:layout_constraintTop_toBottomOf="@id/textTitleIsAthical" />
 
     <TextView
         android:id="@+id/textTitleMedicineCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@android:color/white"
         android:text="@string/medicine_category"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/textName"
         app:layout_constraintTop_toBottomOf="@id/textIsAthical" />
 
@@ -73,23 +75,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="Allopathic"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleMedicineCategory"
-        app:layout_constraintTop_toBottomOf="@id/textTitleMedicineCategory"/>
+        app:layout_constraintTop_toBottomOf="@id/textTitleMedicineCategory" />
 
     <TextView
         android:id="@+id/textTitleMedicineType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@android:color/white"
         android:text="@string/medicine_type"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/textName"
         app:layout_constraintTop_toBottomOf="@id/textMedicineCategory" />
 
@@ -98,96 +100,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="Tablet"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleMedicineType"
-        app:layout_constraintTop_toBottomOf="@id/textTitleMedicineType"/>
+        app:layout_constraintTop_toBottomOf="@id/textTitleMedicineType" />
 
-    <TextView
-        android:id="@+id/textTitleSaltName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:text="@string/salt_name"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/textName"
-        app:layout_constraintTop_toBottomOf="@id/textMedicineType" />
+   <LinearLayout
+       android:id="@+id/linearLayoutSalt"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       app:layout_constraintStart_toStartOf="@id/textName"
+       app:layout_constraintEnd_toEndOf="@id/textName"
+       app:layout_constraintTop_toBottomOf="@id/textMedicineType">
 
-    <TextView
-        android:id="@+id/textSaltName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
-        android:text="Salt Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
-        app:layout_constraintTop_toBottomOf="@id/textTitleSaltName"/>
+       <com.virtualstudios.medistore.ui.widgets.WidgetDisplaySaltName
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/textTitlePotency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:text="@string/potency"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
-        app:layout_constraintTop_toBottomOf="@id/textSaltName" />
-
-    <TextView
-        android:id="@+id/textPotency"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
-        android:text="100"
-        app:layout_constraintEnd_toStartOf="@id/viewDivider"
-        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
-        app:layout_constraintTop_toBottomOf="@id/textTitlePotency"/>
-
-
-    <View
-        android:id="@+id/viewDivider"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        app:layout_constraintStart_toStartOf="@id/textSaltName"
-        app:layout_constraintEnd_toEndOf="@id/textSaltName"
-        app:layout_constraintTop_toBottomOf="@id/textSaltName"/>
-
-    <TextView
-        android:id="@+id/textTitlePotencyType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:text="@string/potency_type"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/viewDivider"
-        app:layout_constraintTop_toTopOf="@id/textTitlePotency" />
-
-    <TextView
-        android:id="@+id/textPotencyType"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
-        android:text="mg"
-        app:layout_constraintEnd_toEndOf="@id/textSaltName"
-        app:layout_constraintStart_toEndOf="@id/viewDivider"
-        app:layout_constraintTop_toBottomOf="@id/textTitlePotencyType"/>
-
+   </LinearLayout>
     <TextView
         android:id="@+id/textTitleManufactureBy"
         android:layout_width="wrap_content"
@@ -197,75 +130,70 @@
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/textName"
-        app:layout_constraintTop_toBottomOf="@id/textPotency"/>
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutSalt" />
 
     <TextView
         android:id="@+id/textManufactureBy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="Manufacture"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleManufactureBy"
-        app:layout_constraintTop_toBottomOf="@id/textTitleManufactureBy"/>
+        app:layout_constraintTop_toBottomOf="@id/textTitleManufactureBy" />
 
     <TextView
         android:id="@+id/textTitleMarketingBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@android:color/white"
         android:text="@string/marketing_by"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/textName"
-        app:layout_constraintTop_toBottomOf="@id/textManufactureBy"/>
+        app:layout_constraintTop_toBottomOf="@id/textManufactureBy" />
 
     <TextView
         android:id="@+id/textMarketingBy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="Marketing by"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleMarketingBy"
-        app:layout_constraintTop_toBottomOf="@id/textTitleMarketingBy"/>
+        app:layout_constraintTop_toBottomOf="@id/textTitleMarketingBy" />
 
     <TextView
         android:id="@+id/textTitleQty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@android:color/white"
         android:text="@string/qty_per_piece"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/textName"
-        app:layout_constraintTop_toBottomOf="@id/textMarketingBy"/>
+        app:layout_constraintTop_toBottomOf="@id/textMarketingBy" />
 
     <TextView
         android:id="@+id/textQty"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:textSize="14sp"
-        android:textColor="@color/colorBlack"
         android:text="10"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/textTitleQty"
-        app:layout_constraintTop_toBottomOf="@id/textTitleQty"/>
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/textTitleQty" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

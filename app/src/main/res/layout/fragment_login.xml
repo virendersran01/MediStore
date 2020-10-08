@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
+    tools:viewBindingIgnore="true"
     tools:context=".ui.fragments.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +18,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="80dp"
-            android:tint="@color/colorAccent"
+            app:tint="@color/colorAccent"
             android:src="@drawable/image_logo"
             android:contentDescription="@string/app_name"
             android:focusable="true"

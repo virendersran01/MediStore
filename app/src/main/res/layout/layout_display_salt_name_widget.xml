@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:viewBindingIgnore="true">
+
+    <TextView
+        android:id="@+id/textTitleSaltName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:text="@string/salt_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textSaltName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
+        app:layout_constraintTop_toBottomOf="@id/textTitleSaltName" />
+
+    <TextView
+        android:id="@+id/textTitlePotency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:text="@string/potency"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
+        app:layout_constraintTop_toBottomOf="@id/textSaltName" />
+
+    <TextView
+        android:id="@+id/textPotency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toStartOf="@id/viewDivider"
+        app:layout_constraintStart_toStartOf="@id/textTitleSaltName"
+        app:layout_constraintTop_toBottomOf="@id/textTitlePotency"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="@id/textSaltName"
+        app:layout_constraintStart_toStartOf="@id/textSaltName"
+        app:layout_constraintTop_toBottomOf="@id/textSaltName" />
+
+    <TextView
+        android:id="@+id/textTitlePotencyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="@string/potency_type"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/viewDivider"
+        app:layout_constraintTop_toTopOf="@id/textTitlePotency" />
+
+    <TextView
+        android:id="@+id/textPotencyType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/textSaltName"
+        app:layout_constraintStart_toEndOf="@id/viewDivider"
+        app:layout_constraintTop_toBottomOf="@id/textTitlePotencyType" />
+
+
+</merge>
